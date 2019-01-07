@@ -6,6 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\User;
+use DB;
 
 class UserTest extends TestCase
 {
@@ -18,7 +19,8 @@ class UserTest extends TestCase
     parent::setUp();
 
     $this->user = factory('App\User')->create([
-      'id' => 33
+      'id' => 33,
+      'password' => 'This is a password.',
     ]);
   }
 
@@ -30,18 +32,37 @@ class UserTest extends TestCase
       'role' => 'physician'
     ]);
 
-    $this->assertTrue(count($this->user->roles()) == 1);
+    $this->assertTrue($this->user->roles()->count() == 1);
 
     DB::table('user_roles')->insert([
       'user_id' => '33',
       'role' => 'clinician'
     ]);
 
-    $this->assertTrue(count($this->user->roles()) == 2);
+    $this->assertTrue($this->user->roles()->count() == 2);
 
   }
 
   /** @test */
-  public function a_user_can_be_disabled() {}
+  public function a_user_can_be_disabled() {
+
+    $this->user->disable();
+
+    $this->assertTrue($this->user->active == false);
+  }
+
+  /** @test */
+  public function a_user_can_be_enabled() {
+
+    $this->user->enable();
+
+    $this->assertTrue($this->user->active == true);
+  }
+
+  /** @test */
+  public function a_user_password_can_be_changed() {
+
+    $originalPassword = $this->user->password;
+  }
 
 }

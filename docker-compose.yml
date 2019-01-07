@@ -11,7 +11,7 @@ services:
       - "./app:/var/www/html"
       - "./nginx:/etc/nginx/"
     ports:
-      - "127.0.0.1:9000:80"
+      - "127.0.0.1:9300:80"
 
 
   php:
@@ -35,16 +35,16 @@ services:
     secrets:
       - db_root_password
     ports:
-      - "127.0.0.1:3306:3306"
+      - "127.0.0.1:3320:3306"
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: cci-pma
+    container_name: medicoffice-pma
     restart: always
     environment:
       - PMA_HOST=medicoffice-db
     ports:
-      - "127.0.0.1:9001:80"
+      - "127.0.0.1:9301:80"
 
 
 secrets:
