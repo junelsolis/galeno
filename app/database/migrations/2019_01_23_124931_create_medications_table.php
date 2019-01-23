@@ -22,6 +22,10 @@ class CreateMedicationsTable extends Migration
             $table->string('dosage')->nullable();
             $table->boolean('active')->default(true);
             $table->timestamps();
+
+            $table->foreign('patient_id')->references('id')->on('patients');
+            $table->foreign('provider_id')->references('id')->on('users');
+            $table->foreign('diagnosis_id')->references('id')->on('diagnosis');
         });
     }
 
