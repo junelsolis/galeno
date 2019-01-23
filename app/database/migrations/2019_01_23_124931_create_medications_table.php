@@ -25,7 +25,7 @@ class CreateMedicationsTable extends Migration
 
             $table->foreign('patient_id')->references('id')->on('patients');
             $table->foreign('provider_id')->references('id')->on('users');
-            $table->foreign('diagnosis_id')->references('id')->on('diagnosis');
+            $table->foreign('diagnosis_id')->references('id')->on('diagnoses');
         });
     }
 

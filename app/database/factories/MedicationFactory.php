@@ -28,8 +28,8 @@ $factory->define(App\Medication::class, function (Faker $faker) {
     return [
         'patient_id' => factory('App\Patient')->create()->id,
         'provider_id' => factory('App\User')->create()->id,
-        'diagnosis_id' => factdory('App\Diagnosis')->create()->id,
+        'diagnosis_id' => factory('App\Diagnosis')->create()->id,
         'name' => $meds[array_rand($meds)],
-        
+        'active' => true
     ];
 });
