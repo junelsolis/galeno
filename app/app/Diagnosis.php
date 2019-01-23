@@ -26,5 +26,9 @@ class Diagnosis extends Model
       $this->active = false;
     }
 
+    public function isActive() {
+      return $this->active;
+    }
+
     protected $table = 'diagnoses';
 }

@@ -42,7 +42,7 @@ class DiagnosisTest extends TestCase
 
 
   /** @test */
-  public function a_diagnosis_can_activated() {
+  public function a_diagnosis_can_be_activated() {
     $this->diagnosis->activate();
 
     $this->assertTrue($this->diagnosis->active == true);
@@ -54,6 +54,14 @@ class DiagnosisTest extends TestCase
     $this->diagnosis->deactivate();
 
     $this->assertTrue($this->diagnosis->active == false);
+  }
+
+  /** @test */
+  public function a_diagnosis_has_a_status() {
+
+    $this->diagnosis->activate();
+
+    $this->assertTrue($this->diagnosis->isActive() == true);
   }
 
 }
