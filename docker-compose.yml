@@ -15,7 +15,7 @@ services:
 
 
   php:
-    image: php:7.2-fpm
+    #image: php:7.2-fpm
     container_name: medicoffice-php
     build:
       context: ./

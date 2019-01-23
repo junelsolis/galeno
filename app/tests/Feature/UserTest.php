@@ -59,10 +59,14 @@ class UserTest extends TestCase
     $this->assertTrue($this->user->active == true);
   }
 
-  /** @test */
-  public function a_user_password_can_be_changed() {
 
-    $originalPassword = $this->user->password;
+  /** @test */
+  public function a_user_has_a_status() {
+
+    $this->user->enable();
+    $this->assertTrue($this->user->isActive() == true);
   }
+
+
 
 }

@@ -27,6 +27,10 @@ class User extends Authenticatable
       //$this->user->save();
     }
 
+    public function isActive() {
+      return $this->active;
+    }
+
     protected $fillable = [
         'name', 'email', 'password',
     ];
