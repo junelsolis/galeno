@@ -11,7 +11,7 @@ services:
       - "./app:/var/www/html"
       - "./nginx:/etc/nginx/"
     ports:
-      - "127.0.0.1:9300:80"
+      - "9300:80"
 
 
   php:
@@ -28,14 +28,14 @@ services:
     container_name: medicoffice-db
     restart: always
     volumes:
-      - ./db:/var/lib/mysql
+      - medicoffice-db-vol:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
       MYSQL_DATABASE: medicoffice
     secrets:
       - db_root_password
-    ports:
-      - "127.0.0.1:3320:3306"
+    # ports:
+    #   - "127.0.0.1:3320:3306"
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -50,3 +50,7 @@ services:
 secrets:
    db_root_password:
      file: ./secrets/db_root_password
+
+
+volumes:
+  medicoffice-db-vol:
