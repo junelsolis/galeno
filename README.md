@@ -1,2 +1,2 @@
 # medicoffice
-Simple patient records and scheduling for any physician's office.
+Simple patient records for any physician's office.
