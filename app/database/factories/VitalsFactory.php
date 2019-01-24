@@ -8,7 +8,7 @@ use App\Encounter;
 $factory->define(App\Vitals::class, function (Faker $faker) {
     return [
         'patient_id' => factory('App\Patient')->create()->id,
-        'provider_id' => factory('App\Provider')->create()->id,
+        'provider_id' => factory('App\User')->create()->id,
         'encounter_id' => factory('App\Encounter')->create()->id,
         'date' => $faker->dateTimeBetween($startDate = '-2 years', $endDate = 'now', $timezone = null),
         'celsius_temperature' => rand(340,410) / 10,
