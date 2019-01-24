@@ -19,11 +19,13 @@ class CreateDiagnosesTable extends Migration
             $table->string('icd_10_code')->nullable();
             $table->unsignedInteger('patient_id');
             $table->unsignedInteger('provider_id');
-            $table->boolean('active')->default(true);
+            $table->unsignedInteger('encounter_id');
+            $table->boolean('active')->default(1);
             $table->timestamps();
 
             $table->foreign('patient_id')->references('id')->on('patients');
             $table->foreign('provider_id')->references('id')->on('users');
+            $table->foreign('encounter_id')->references('id')->on('encounters');
         });
     }
 

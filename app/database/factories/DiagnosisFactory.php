@@ -37,5 +37,6 @@ $factory->define(App\Diagnosis::class, function (Faker $faker) {
     'icd_10_code' => rand(100,999),
     'patient_id' => factory('App\Patient')->create()->id,
     'provider_id' => factory('App\User')->create()->id,
+    'encounter_id' => factory('App\Encounter')->create()->id,
   ];
 });
