@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Models;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -92,16 +92,6 @@ class EncounterTest extends TestCase
 
       $this->assertTrue($this->encounter->vitals->count() == 1);
     }
-
-
-
-    /** @test */
-    public function an_encounter_has_lab_results() {}
-
-
-
-    /** @test */
-    public function an_encounter_has_imaging_resuls() {}
 
 
 
