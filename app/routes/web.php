@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', 'LoginController@showLogin')->middleware('guest');
+Route::post('/', 'LoginController@login')->middleware('guest');
+
+Route::get('/provider', 'ProviderController@main')->middleware('auth');
