@@ -14,7 +14,7 @@
         </div>
         <form method='post' action='/'>
           {{ csrf_field() }}
-          <input type='text' name='username' required placeholder='Username or e-mail address' />
+          <input type='text' name='username' required placeholder='Username or email address' />
 
           <input type='password' name='password' required placeholder='Password' />
 
