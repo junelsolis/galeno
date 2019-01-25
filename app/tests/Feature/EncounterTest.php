@@ -11,6 +11,7 @@ use App\Patient;
 use App\Medication;
 use App\Diagnosis;
 use App\Encounter;
+use App\Vitals;
 
 class EncounterTest extends TestCase
 {
@@ -44,6 +45,10 @@ class EncounterTest extends TestCase
 
       factory('App\Medication',7)->create([
         'encounter_id' => 66
+      ]);
+
+      factory('App\Vitals')->create([
+        'encounter_id' => 66,
       ]);
 
 
@@ -84,6 +89,7 @@ class EncounterTest extends TestCase
 
     /** @test */
     public function an_encounter_has_vital_signs() {
+
       $this->assertTrue($this->encounter->vitals->count() == 1);
     }
 

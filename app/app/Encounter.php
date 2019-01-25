@@ -27,6 +27,10 @@ class Encounter extends Model
       return $this->hasMany('App\Diagnosis');
     }
 
+    public function vitals() {
+      return $this->hasOne('App\Vitals','encounter_id');
+    }
+
     public function sign() {
       $this->signed = true;
     }

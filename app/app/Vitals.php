@@ -19,7 +19,7 @@ class Vitals extends Model
   }
 
   public function encounter() {
-    return $this->hasOne('App\Encounter','id','encounter_id');
+    return $this->belongsTo('App\Encounter','encounter_id','id');
   }
 
   public function formattedDate() {}
