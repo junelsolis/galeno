@@ -1,0 +1,23 @@
+.login {
+  height: 100vh;
+  background-color: #1D2E3B;
+
+  .box {
+    max-width: 20vw;
+    min-height: 30vh;
+    // background-color: white;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+
+    form {
+      margin-top: 20px;
+    }
+
+    button {
+      color: white;      
+    }
+
+  }
+}
