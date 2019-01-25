@@ -18,9 +18,11 @@ class LoginController extends Controller
 
     public function login(Request $request) {
 
-      $credentials = $request->only('email','password');
 
-      if (Auth::attempt($credentials)) {
+      $username = $request['username'];
+      $password = $request['password'];
+
+      if (Auth::attempt(['username' => $username, 'password' => $password, 'active' => true])) {
         return redirect('/provider');
       }
 

@@ -9,6 +9,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use App\User;
 use Hash;
+use Auth;
 
 
 class LoginControllerTest extends TestCase
@@ -45,13 +46,27 @@ class LoginControllerTest extends TestCase
       'password' => Hash::make('this is a password'),
     ]);
 
+
     $response = $this->post('/', [
-      'email' => $user->email,
+      'username' => $user->username,
       'password' => 'this is a password',
     ]);
 
+    // active user able to login with correct username/pass combination
     $response->assertRedirect('/provider');
     $this->assertAuthenticatedAs($user);
+
+
+    // inactive user should not be able to login
+    $user->disable();
+    $user->save();
+    Auth::logout();
+    $response = $this->post('/', [
+      'username' => $user->username,
+      'password' => 'this is a password',
+    ]);
+
+    $response->assertRedirect('/');
   }
 
 }
