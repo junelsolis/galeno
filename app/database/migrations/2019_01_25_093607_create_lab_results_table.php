@@ -17,7 +17,8 @@ class CreateLabResultsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('patient_id');
             $table->dateTime('date');
-            $table->text('note');
+            $table->string('origin');
+            $table->text('contents');
             $table->timestamps();
 
             $table->foreign('patient_id')->references('id')->on('patients');
