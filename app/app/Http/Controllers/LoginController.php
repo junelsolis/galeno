@@ -26,6 +26,13 @@ class LoginController extends Controller
         return redirect('/provider');
       }
 
+      return redirect()->back()->withErrors(['msg' => 'Invalid credentials.']);
+    }
+
+    public function logout() {
+
+      Auth::logout();
+
       return redirect('/');
     }
 
