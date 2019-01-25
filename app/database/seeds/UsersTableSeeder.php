@@ -16,6 +16,7 @@ class UsersTableSeeder extends Seeder
         factory('App\User')->create([
           'id' => 1,
           'name' => 'System Administrator',
+          'username' => 'admin',
           'password' => Hash::make('adminpassword')
         ]);
 
@@ -24,9 +25,10 @@ class UsersTableSeeder extends Seeder
           'role' => 'administrator'
         ]);
 
-        // create random users
+
+        // create random clinicians
         $count = 0;
-        while ($count < 10) {
+        while ($count < 14) {
 
           DB::table('user_roles')->insert([
             'user_id' => factory('App\User')->create()->id,

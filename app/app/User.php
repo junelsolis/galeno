@@ -14,17 +14,15 @@ class User extends Authenticatable
     public function roles() {
       $roles = DB::table('user_roles')->where('user_id', $this->id)->get();
 
-      return $roles;
+      return $roles->pluck('role');
     }
 
     public function disable() {
       $this->active = false;
-      //$this->user->save();
     }
 
     public function enable() {
       $this->active = true;
-      //$this->user->save();
     }
 
     public function isActive() {

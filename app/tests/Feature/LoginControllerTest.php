@@ -4,12 +4,12 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
-// use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use App\User;
 use Hash;
 use Auth;
+use DB;
 
 
 class LoginControllerTest extends TestCase
@@ -36,6 +36,18 @@ class LoginControllerTest extends TestCase
 
     $response->assertRedirect('/provider');
 
+
+    // if admin, is redirected to admin page
+    Auth::logout();
+
+    $user = factory('App\User')->create();
+    DB::table('user_roles')->insert([
+      'user_id' => $user->id,
+      'role' => 'administrator'
+    ]);
+
+    $response = $this->actingAs($user)->get('/');
+    $response->assertRedirect('/admin');
 
   }
 

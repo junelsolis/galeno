@@ -17,8 +17,14 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
+
         if (Auth::guard($guard)->check()) {
-            return redirect('/provider');
+
+          if (Auth::user()->roles()->contains('administrator')) {
+            return redirect('/admin');
+          }
+
+          return redirect('/provider');
         }
 
         return $next($request);
