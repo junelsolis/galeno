@@ -4,12 +4,32 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\User;
+use App\Encounter;
+use App\Diagnosis;
+use App\Vitals;
+use App\Medication;
 use Carbon\Carbon;
 
 class Patient extends Model
 {
     public function provider() {
       return $this->hasOne('App\User','id','provider_id')->first();
+    }
+
+    public function encounters() {
+      return $this->hasMany('App\Encounter','patient_id');
+    }
+
+    public function diagnoses() {
+      return $this->hasMany('App\Diagnosis','patient_id');
+    }
+
+    public function vitals() {
+      return $this->hasMany('App\Vitals','patient_id');
+    }
+
+    public function medications() {
+      return $this->hasMany('App\Medication','patient_id');
     }
 
     public function getFormattedDateOfBirthAttribute() {

@@ -9,6 +9,10 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Patient;
 use App\Users;
 use Carbon\Carbon;
+use App\Encounter;
+use App\Diagnsosis;
+use App\Vitals;
+use App\Medication;
 
 class PatientTest extends TestCase
 {
@@ -59,6 +63,53 @@ class PatientTest extends TestCase
     $initials = $this->patient['formattedName']['initials'];
 
     $this->assertTrue($initials == 'AJT');
+  }
+
+  /** @test */
+  public function a_patient_has_encounters() {
+
+    factory('App\Encounter',3)->create([
+      'patient_id' => 10
+    ]);
+
+
+    $this->assertTrue($this->patient->encounters->count() == 3);
+  }
+
+
+  /** @test */
+  public function a_patient_has_diagnoses() {
+
+    factory('App\Diagnosis',5)->create([
+      'patient_id' => 10
+    ]);
+
+    $this->assertTrue($this->patient->diagnoses->count() == 5);
+  }
+
+
+
+  /** @test */
+  public function a_patient_has_vitals() {
+
+    factory('App\Vitals',7)->create([
+      'patient_id' => 10
+    ]);
+
+    $this->assertTrue($this->patient->vitals->count() == 7);
+  }
+
+
+
+  /** @test */
+  public function a_patient_has_medications() {
+
+    factory('App\Medication',10)->create([
+      'patient_id' => 10
+    ]);
+
+    $this->assertTrue($this->patient->medications->count() == 10);
+
   }
 
 }
