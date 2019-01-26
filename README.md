@@ -3,7 +3,7 @@ Simple patient records for any physician's office.
 <hr>
 
 
-<br><br><br>
+<br>
 
 ### Requirements
 1. Docker & Docker Compose
