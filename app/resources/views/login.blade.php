@@ -9,29 +9,41 @@
   </head>
   <body>
     <div class='login'>
-      <div class='box'>
-        <div class='image text-center'>
-          <img src='images/medicoffice-logo@2x.png' />
-        </div>
-        <form method='post' action='/'>
-          {{ csrf_field() }}
-          <input type='text' name='username' required placeholder='Username or email address' />
-
-          <input type='password' name='password' required placeholder='Password' />
-
-          <button type='submit' class='primary button expanded'><i class="fas fa-sign-in-alt"></i>&nbsp;<strong>LOGIN</strong></button>
-        </form>
-
-        @if (session('error'))
-        <div class='errors' >
-          <div class='callout alert-amber'data-closable>
-            {{ session('error') }}
-            <button class="close-button" aria-label="Close alert" type="button" data-close>
-              <span aria-hidden="true">&times;</span>
-            </button>
+      <div class='box grid-x'>
+        <div class='cell medium-6 left-box'>
+          <div class='image'>
+            <img src='images/medicoffice-logo.png'/><br />
           </div>
+          <div class='text'>
+            <span>
+              by Junel Solis MD
+            </span>
+          </div>
+
         </div>
-        @endif
+        <div class='cell medium-6 right-box'>
+          <form method='post' action='/'>
+            {{ csrf_field() }}
+
+            <input type='text' name='username' required placeholder='Username or email address' />
+            <input type='password' name='password' required placeholder='Password' />
+
+
+
+            <button type='submit' class='primary button expanded'><i class="fas fa-sign-in-alt"></i>&nbsp;<strong>LOGIN</strong></button>
+
+            @if (session('error'))
+            <div class='alert-amber'>
+              <div>
+                {{ session('error') }}
+              </div>
+            </div>
+            @endif
+
+          </form>
+
+
+        </div>
       </div>
     </div>
 
