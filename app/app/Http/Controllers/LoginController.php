@@ -23,6 +23,12 @@ class LoginController extends Controller
       $password = $request['password'];
 
       if (Auth::attempt(['username' => $username, 'password' => $password, 'active' => true])) {
+
+        $user = Auth::user();
+
+        if ($user->roles()->contains('administrator')) {
+          return redirect('/admin');
+        }
         return redirect('/provider');
       }
 

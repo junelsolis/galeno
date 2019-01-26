@@ -81,4 +81,14 @@ class LoginControllerTest extends TestCase
     $response->assertRedirect('/');
   }
 
+
+  /** @test */
+  public function controller_can_log_a_user_out() {
+    Auth::logout();
+
+    $response = $this->get('/');
+
+    $response->assertViewIs('login');
+  }
+
 }

@@ -14,5 +14,8 @@
 
 Route::get('/', 'LoginController@showLogin')->middleware('guest');
 Route::post('/', 'LoginController@login')->middleware('guest');
+Route::get('/logout', 'LoginController@logout');
 
 Route::get('/provider', 'ProviderController@main')->middleware('auth');
+
+Route::get('/admin', 'AdminController@main')->middleware('auth');
