@@ -52,3 +52,23 @@ html, body {
 // .menu-right {
 //
 // }
+
+
+.alert-amber {
+  // background-color: #fbc531;
+  background-color: #ffeaa7;
+  color: grey;
+  border-radius: 3px;
+  border-color: grey;
+  border-width: 1px;
+  border-style: solid;
+  padding: 10px;
+
+  .close-button {
+    span {
+      position: relative;
+      top: -3px;
+      color: grey;
+    }
+  }
+}

@@ -7794,6 +7794,22 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
+.alert-amber {
+  background-color: #ffeaa7;
+  color: grey;
+  border-radius: 3px;
+  border-color: grey;
+  border-width: 1px;
+  border-style: solid;
+  padding: 10px;
+}
+
+.alert-amber .close-button span {
+  position: relative;
+  top: -3px;
+  color: grey;
+}
+
 .login {
   height: 100vh;
   background-color: #1D2E3B;
@@ -7816,4 +7832,3 @@ body {
 .login .box button {
   color: white;
 }
-
