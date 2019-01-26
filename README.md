@@ -1,2 +1,2 @@
-![Medicoffice Logo](https://github.com/junelsolis/medicoffice/blob/master/medicoffice-logo.png | width=400)
+![Medicoffice Logo](https://github.com/junelsolis/medicoffice/blob/master/medicoffice-logo.png)
 Simple patient records for any physician's office.
