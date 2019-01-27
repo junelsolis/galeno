@@ -31,7 +31,7 @@ class LoginController extends Controller
         }
 
         if ($user->roles()->contains('physician')) {
-          return redirec('/physician');
+          return redirect('/physician');
         }
 
         return redirect('/provider');
