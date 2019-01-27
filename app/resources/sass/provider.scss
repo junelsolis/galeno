@@ -151,4 +151,23 @@
 
   }
 
+  .dashboard {
+
+    margin: 50px 20px 50px 20px;
+
+    .widget {
+      background-color: white;
+      padding: 10px;
+      // border-radius: 3px;
+      margin-bottom: 10px;
+      min-height: 10vh;
+
+      .header span {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #1D4B49;
+      }
+    }
+  }
+
 }
