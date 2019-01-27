@@ -25,6 +25,32 @@ class UsersTableSeeder extends Seeder
           'role' => 'administrator'
         ]);
 
+        // create default physician
+        factory('App\User')->create([
+          'id' => 2,
+          'name' => 'John Smith',
+          'username' => 'jsmith',
+          'password' => Hash::make('coolpassword')
+        ]);
+
+        DB::table('user_roles')->insert([
+          'user_id' => 2,
+          'role' => 'physician'
+        ]);
+
+        // create default staff
+        factory('App\User')->create([
+          'id' => 3,
+          'name' => 'Jane Doe',
+          'username' => 'jdoe',
+          'password' => Hash::make('coolpassword')
+        ]);
+
+        DB::table('user_roles')->insert([
+          'user_id' => 3,
+          'role' => 'medical-staff'
+        ]);
+
 
         // create random clinicians
         $count = 0;
@@ -32,7 +58,7 @@ class UsersTableSeeder extends Seeder
 
           DB::table('user_roles')->insert([
             'user_id' => factory('App\User')->create()->id,
-            'role' => 'clinician'
+            'role' => 'medical-staff'
           ]);
 
           $count++;
