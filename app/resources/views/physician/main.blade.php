@@ -10,7 +10,7 @@
   </head>
   <body class='provider'>
     <div class='grid-x'>
-      @include('provider.menu')
+      @include('physician.menu')
 
       <div class='cell medium-6 large-8'>
         <div class='dashboard'>
@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      @include('provider.sidebar')
+      @include('physician.sidebar')
     </div>
 
     <script>

@@ -24,6 +24,10 @@ class RedirectIfAuthenticated
             return redirect('/admin');
           }
 
+          if (Auth::user()->roles()->contains('physician')) {
+            return redirect('/physician');
+          }
+
           return redirect('/provider');
         }
 

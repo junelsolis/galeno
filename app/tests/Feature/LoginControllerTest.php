@@ -64,6 +64,7 @@ class LoginControllerTest extends TestCase
       'password' => 'this is a password',
     ]);
 
+
     // active user able to login with correct username/pass combination
     $response->assertRedirect('/provider');
     $this->assertAuthenticatedAs($user);
@@ -79,6 +80,24 @@ class LoginControllerTest extends TestCase
     ]);
 
     $response->assertRedirect('/');
+
+
+
+    // physician gets redirected to physician dashboard
+    $user = factory('App\User')->create([
+      'id' => 33,
+      'username' => 'jsmith',
+      'password' => Hash::make('this is a password'),
+    ]);
+
+    DB::table('user_roles')->insert([
+      'user_id' => 33,
+      'role' => 'physician'
+    ]);
+
+    $response = $this->actingAs($user)->get('/');
+    $response->assertRedirect('/physician');
+
   }
 
 
