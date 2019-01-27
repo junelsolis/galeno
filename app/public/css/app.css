@@ -5649,7 +5649,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 .tabs {
   margin: 0;
   border: 1px solid #e6e6e6;
-  background: #fefefe;
+  background: inherit;
   list-style-type: none;
 }
 
@@ -5698,8 +5698,8 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 
 .tabs-title > a {
   display: block;
-  padding: 1.25rem 1.5rem;
-  font-size: 0.75rem;
+  padding: 1rem 1.3rem;
+  font-size: 0.8125rem;
   line-height: 1;
   color: #079992;
 }
@@ -5709,14 +5709,14 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 }
 
 .tabs-title > a:hover {
-  background: #fefefe;
+  background: rgba(7, 153, 146, 0.18);
   color: #06847e;
 }
 
 .tabs-title > a:focus,
 .tabs-title > a[aria-selected=true] {
-  background: #e6e6e6;
-  color: #079992;
+  background: #079992;
+  color: white;
 }
 
 .tabs-content {
@@ -7970,5 +7970,27 @@ body {
   font-size: 1.1rem;
   color: #1D4B49;
   font-weight: bold;
+}
+
+.provider .chart {
+  padding: 20px;
+}
+
+.provider .chart .tabs {
+  border: none;
+}
+
+.provider .chart .tabs .fake-space {
+  height: 50rem;
+}
+
+.provider .chart .tabs li {
+  margin-left: 8px;
+  background-color: white;
+  border-top: #1D4B49 solid 2px;
+}
+
+.provider .chart .tabs li:first-child {
+  margin-left: 0;
 }
 

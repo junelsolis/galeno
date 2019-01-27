@@ -794,13 +794,13 @@ $table-stack-breakpoint: medium;
 // --------
 
 $tab-margin: 0;
-$tab-background: $white;
+$tab-background: inherit;//$white;
 $tab-color: $primary-color;
-$tab-background-active: $light-gray;
-$tab-active-color: $primary-color;
-$tab-item-font-size: rem-calc(12);
-$tab-item-background-hover: $white;
-$tab-item-padding: 1.25rem 1.5rem;
+$tab-background-active: #079992; //$light-gray;
+$tab-active-color: white;//$primary-color;
+$tab-item-font-size: rem-calc(13);
+$tab-item-background-hover: rgba(7,153,146,0.18);//$white;
+$tab-item-padding: 1.0rem 1.3rem;
 $tab-content-background: $white;
 $tab-content-border: $light-gray;
 $tab-content-color: $body-font-color;

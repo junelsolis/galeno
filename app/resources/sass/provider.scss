@@ -109,4 +109,30 @@
 
   }
 
+
+
+  .chart {
+    padding: 20px;
+    .tabs {
+      border: none;
+
+      .fake-space {
+        height: 50rem;
+      }
+      li {
+        margin-left: 8px;
+        background-color: white;
+
+        border-top: #1D4B49 solid 2px;
+      }
+
+      li:first-child {
+        margin-left: 0;
+      }
+
+
+    }
+
+  }
+
 }
