@@ -7875,3 +7875,56 @@ body {
 .login .box .right-box form button {
   color: white;
 }
+
+.provider .menu {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.provider .menu .logo {
+  padding: 10px 7px 10px 7px;
+  background-color: #ededed;
+}
+
+.provider .menu .items {
+  background-color: #1d2e38;
+  flex-grow: 1;
+  padding: 20px 0px 20px 0px;
+  color: #079992;
+}
+
+.provider .menu .items .menu-section {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #0E171D;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #263C4D;
+}
+
+.provider .menu .items .menu-section ul {
+  list-style: none;
+}
+
+.provider .menu .items .menu-section ul li.header {
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.provider .menu .items .menu-section ul li.item {
+  text-indent: 25px;
+}
+
+.provider .menu .items .menu-section ul a {
+  color: inherit;
+}
+
+.provider .menu .items .menu-section:first-child {
+  border-top-style: none;
+}
+
+.provider .menu .items .menu-section:last-child {
+  border-bottom-style: none;
+}
