@@ -7,7 +7,7 @@
 Some medical practices are severely under-equipped when it comes to maintaining patient records. Many still rely on paper to keep track of their patients. This web application aims to solve that problem in the simple, easy-to-use, and open-source way.
 
 ### Requirements
-1. Docker & Docker Compose
+* Docker & Docker Compose
 
 ### Basic installation steps
 1. Clone this repository.
