@@ -1,12 +1,10 @@
 <img src='https://github.com/junelsolis/medicoffice/blob/master/medicoffice-logo.png' width='400'>
-Simple patient records for any physician's office.
 
 ![](https://img.shields.io/github/license/junelsolis/medicoffice.svg)
 ![](https://img.shields.io/github/last-commit/junelsolis/medicoffice.svg)
 <hr>
 
-
-<br>
+Some medical practices are severely under-equipped when it comes to maintaining patient records. Many still rely on paper to keep track of their patients. This web application aims to solve that problem in the simple, easy-to-use, and open-source way.
 
 ### Requirements
 1. Docker & Docker Compose
