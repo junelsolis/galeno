@@ -3,8 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Auth;
 
-class AuthorizeProvider
+class AuthorizePhysician
 {
     /**
      * Handle an incoming request.
@@ -15,6 +16,13 @@ class AuthorizeProvider
      */
     public function handle($request, Closure $next)
     {
+
+        $user = Auth::user();
+
+        if (!$user->roles()->contains('physician')) {
+          return redirect('/');
+        }
+
         return $next($request);
     }
 }
