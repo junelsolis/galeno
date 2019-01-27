@@ -7921,6 +7921,10 @@ body {
   color: inherit;
 }
 
+.provider .menu .items .menu-section ul a:hover {
+  color: #09C7BE;
+}
+
 .provider .menu .items .menu-section:first-child {
   border-top-style: none;
 }
