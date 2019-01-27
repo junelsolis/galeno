@@ -11,6 +11,12 @@
   <body class='provider'>
     <div class='grid-x'>
       @include('provider.menu')
+
+      <div class='cell medium-6 large-8'>
+
+      </div>
+
+      @include('provider.sidebar')
     </div>
   </body>
 </html>

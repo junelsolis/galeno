@@ -7876,6 +7876,10 @@ body {
   color: white;
 }
 
+.provider {
+  background-color: #e7f0f0;
+}
+
 .provider .menu {
   min-height: 100vh;
   display: flex;
@@ -7932,3 +7936,39 @@ body {
 .provider .menu .items .menu-section:last-child {
   border-bottom-style: none;
 }
+
+.provider .sidebar .top {
+  margin: 20px 10px 10px 20px;
+  color: #079992;
+  display: flex;
+  align-items: center;
+}
+
+.provider .sidebar .top p {
+  font-size: 1.1rem;
+  text-align: right;
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
+.provider .sidebar .top i {
+  padding-left: 10px;
+  font-size: 1.3rem;
+  margin-right: 0;
+}
+
+.provider .sidebar .widgets .widget {
+  background-color: rgba(7, 153, 146, 0.18);
+  margin-right: 10px;
+  border-radius: 3px;
+  margin-top: 20px;
+  min-height: 20vh;
+  padding: 15px;
+}
+
+.provider .sidebar .widgets .widget .header {
+  font-size: 1.1rem;
+  color: #1D4B49;
+  font-weight: bold;
+}
+
