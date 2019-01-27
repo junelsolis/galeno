@@ -121,7 +121,8 @@
       }
       li {
         margin-left: 8px;
-        background-color: white;
+        // background-color: white;
+        background-color: #ededed;
 
         border-top: #1D4B49 solid 2px;
       }
@@ -131,6 +132,21 @@
       }
 
 
+    }
+
+
+    .tabs-content {
+      .section {
+
+        margin-top: 30px;
+        .header > span {
+          color: #1D4B49;
+          font-size: 1.1rem;
+          font-weight: bold;
+        }
+
+        border-bottom: #ededed solid 2px;
+      }
     }
 
   }

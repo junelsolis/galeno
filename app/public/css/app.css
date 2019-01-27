@@ -7986,11 +7986,22 @@ body {
 
 .provider .chart .tabs li {
   margin-left: 8px;
-  background-color: white;
+  background-color: #ededed;
   border-top: #1D4B49 solid 2px;
 }
 
 .provider .chart .tabs li:first-child {
   margin-left: 0;
+}
+
+.provider .chart .tabs-content .section {
+  margin-top: 30px;
+  border-bottom: #ededed solid 2px;
+}
+
+.provider .chart .tabs-content .section .header > span {
+  color: #1D4B49;
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
