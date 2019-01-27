@@ -7876,29 +7876,43 @@ body {
   color: white;
 }
 
-.provider {
+.physician {
   background-color: #e7f0f0;
 }
 
-.provider .menu {
+.physician .top-bar {
+  background-color: white;
+  padding: 0;
+}
+
+.physician .top-bar .image {
+  background-color: #ededed;
+  padding: 10px 15px 10px 15px;
+}
+
+.physician .top-bar .search-bar {
+  color: lightgrey;
+  padding-left: 20px;
+}
+
+.physician .menu {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.provider .menu .logo {
-  padding: 10px 7px 10px 7px;
+.physician .menu .logo {
   background-color: #ededed;
 }
 
-.provider .menu .items {
+.physician .menu .items {
   background-color: #1d2e38;
   flex-grow: 1;
   padding: 20px 0px 20px 0px;
   color: #079992;
 }
 
-.provider .menu .items .menu-section {
+.physician .menu .items .menu-section {
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: #0E171D;
@@ -7907,57 +7921,57 @@ body {
   border-top-color: #263C4D;
 }
 
-.provider .menu .items .menu-section ul {
+.physician .menu .items .menu-section ul {
   list-style: none;
 }
 
-.provider .menu .items .menu-section ul li.header {
+.physician .menu .items .menu-section ul li.header {
   margin-top: 20px;
   text-transform: uppercase;
   font-weight: bold;
 }
 
-.provider .menu .items .menu-section ul li.item {
+.physician .menu .items .menu-section ul li.item {
   text-indent: 25px;
 }
 
-.provider .menu .items .menu-section ul a {
+.physician .menu .items .menu-section ul a {
   color: inherit;
 }
 
-.provider .menu .items .menu-section ul a:hover {
+.physician .menu .items .menu-section ul a:hover {
   color: #09C7BE;
 }
 
-.provider .menu .items .menu-section:first-child {
+.physician .menu .items .menu-section:first-child {
   border-top-style: none;
 }
 
-.provider .menu .items .menu-section:last-child {
+.physician .menu .items .menu-section:last-child {
   border-bottom-style: none;
 }
 
-.provider .sidebar .top {
+.physician .sidebar .top {
   margin: 20px 10px 10px 20px;
   color: #079992;
   display: flex;
   align-items: center;
 }
 
-.provider .sidebar .top p {
+.physician .sidebar .top p {
   font-size: 1.1rem;
   text-align: right;
   margin-bottom: 0;
   flex-grow: 1;
 }
 
-.provider .sidebar .top i {
+.physician .sidebar .top i {
   padding-left: 10px;
   font-size: 1.3rem;
   margin-right: 0;
 }
 
-.provider .sidebar .widgets .widget {
+.physician .sidebar .widgets .widget {
   background-color: rgba(7, 153, 146, 0.18);
   margin-right: 10px;
   border-radius: 3px;
@@ -7966,57 +7980,57 @@ body {
   padding: 15px;
 }
 
-.provider .sidebar .widgets .widget .header {
+.physician .sidebar .widgets .widget .header {
   font-size: 1.1rem;
   color: #1D4B49;
   font-weight: bold;
 }
 
-.provider .chart {
+.physician .chart {
   padding: 20px;
 }
 
-.provider .chart .tabs {
+.physician .chart .tabs {
   border: none;
 }
 
-.provider .chart .tabs .fake-space {
+.physician .chart .tabs .fake-space {
   height: 50rem;
 }
 
-.provider .chart .tabs li {
+.physician .chart .tabs li {
   margin-left: 8px;
   background-color: #ededed;
   border-top: #1D4B49 solid 2px;
 }
 
-.provider .chart .tabs li:first-child {
+.physician .chart .tabs li:first-child {
   margin-left: 0;
 }
 
-.provider .chart .tabs-content .section {
+.physician .chart .tabs-content .section {
   margin-top: 30px;
   border-bottom: #ededed solid 2px;
 }
 
-.provider .chart .tabs-content .section .header > span {
+.physician .chart .tabs-content .section .header > span {
   color: #1D4B49;
   font-size: 1.1rem;
   font-weight: bold;
 }
 
-.provider .dashboard {
+.physician .dashboard {
   margin: 50px 20px 50px 20px;
 }
 
-.provider .dashboard .widget {
+.physician .dashboard .widget {
   background-color: white;
   padding: 10px;
   margin-bottom: 10px;
   min-height: 10vh;
 }
 
-.provider .dashboard .widget .header span {
+.physician .dashboard .widget .header span {
   font-size: 1.2rem;
   font-weight: bold;
   color: #1D4B49;

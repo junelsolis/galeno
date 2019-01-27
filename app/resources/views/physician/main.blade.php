@@ -8,7 +8,18 @@
     <script src="/js/app.js"></script>
     <title>Medicoffice | Provider</title>
   </head>
-  <body class='provider'>
+  <body class='physician'>
+    <div class='top-bar grid-x'>
+      <div class='image cell medium-3 large-2'>
+        <img src='images/medicoffice-logo.png' />
+      </div>
+      <div class='search-bar cell medium-6 large-8'>
+        <span><i class="fas fa-search"></i>&nbsp;Search for Patients, Medications, Lab Results, Imaging</span>
+      </div>
+      <div class='cell medium-3 large-2'>
+        right
+      </div>
+    </div>
     <div class='grid-x'>
       @include('physician.menu')
 

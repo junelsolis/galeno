@@ -1,7 +1,7 @@
 <div class='menu cell medium-3 large-2'>
-  <div class='logo'>
+  <!-- <div class='logo'>
     <img src='images/medicoffice-logo.png' />
-  </div>
+  </div> -->
   <div class='items'>
     <div class='menu-section'>
       <ul>
