@@ -21,8 +21,8 @@
         You have <strong>28</strong> patients waiting. There are <strong>15</strong> unsigned <a href=''></a>encounters.
         <hr />
         <p style='color:grey; font-size:0.95rem;'>
-          This is free software developed by <a href='https://www.junelsolis.com'>Junel Solis MD</a>.<br /><br />
-          For technical support, contact me <a href='https://www.junelsolis.com'>directly</a> or on the <a href='https://www.github.com/junelsolis/medicoffice'>Github</a> repository page.
+          This is free software developed by <a href='https://www.junelsolis.com' target='_blank'>Junel Solis MD</a>.<br /><br />
+          For technical support, contact me <a href='https://www.junelsolis.com' target='_blank'>directly</a> or on the <a href='https://www.github.com/junelsolis/medicoffice' target='_blank'>Github</a> repository page.
         </p>
       </div>
     </div>
