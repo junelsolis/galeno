@@ -1,36 +1,44 @@
 .physician {
 
-  background-color: rgb(231,240,240);
+  // background-color: rgb(231,240,240);
+  background-color: white;
 
-  .top-bar {
-    background-color: white;
-    padding: 0;
-
-    .image {
-      background-color: #ededed;
-      padding: 10px 15px 10px 15px;
-
-    }
-
+  .content {
     .search-bar {
-      color: lightgrey;
-      padding-left: 20px;
-    }
+      background-color: red;
+      min-height: 45px;
 
+      position: sticky;
+      position: -webkit-sticky;
+      top:0;
+
+    }
   }
 
   .menu {
 
-    min-height: 100vh;
+    background-color: #1d2e38;
+
+
+
     display: flex;
     flex-direction: column;
     .logo {
 
+      display: flex;
+      align-items: center;
+      flex-direction: column;
       background-color: #ededed;
+      min-height: 45px;
+      padding: 7px 10px 7px 10px;
+
+      img {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
     }
 
     .items {
-      background-color: #1d2e38;
       flex-grow: 1;
 
       padding: 20px 0px 20px 0px;
@@ -84,45 +92,47 @@
 
   .sidebar {
 
-    .top {
-      margin: 20px 10px 10px 20px;
-      color: #079992;
+    background-color: rgba(7,153,146,0.18);
 
-      display: flex;
-      align-items: center;
+    // .top {
+    //   margin: 20px 10px 10px 20px;
+    //   color: #079992;
+    //
+    //   display: flex;
+    //   align-items: center;
+    //
+    //   p {
+    //     font-size: 1.1rem;
+    //     // font-weight: bold;
+    //     text-align: right;
+    //     margin-bottom: 0;
+    //     flex-grow: 1;
+    //   }
+    //
+    //   i {
+    //     padding-left: 10px;
+    //     font-size: 1.3rem;
+    //     margin-right: 0;
+    //   }
+    // }
 
-      p {
-        font-size: 1.1rem;
-        // font-weight: bold;
-        text-align: right;
-        margin-bottom: 0;
-        flex-grow: 1;
-      }
-
-      i {
-        padding-left: 10px;
-        font-size: 1.3rem;
-        margin-right: 0;
-      }
-    }
-
-    .widgets {
-
-      .widget {
-        background-color: rgba(7,153,146,0.18);
-        margin-right: 10px;
-        border-radius: 3px;
-        margin-top: 20px;
-        min-height: 20vh;
-        padding: 15px;
-
-        .header {
-          font-size: 1.1rem;
-          color: #1D4B49;
-          font-weight: bold;
-        }
-      }
-    }
+    // .widgets {
+    //
+    //   .widget {
+    //     background-color: rgba(7,153,146,0.18);
+    //     margin-right: 10px;
+    //     border-radius: 3px;
+    //     margin-top: 20px;
+    //     min-height: 20vh;
+    //     padding: 15px;
+    //
+    //     .header {
+    //       font-size: 1.1rem;
+    //       color: #1D4B49;
+    //       font-weight: bold;
+    //     }
+    //   }
+    // }
 
   }
 
