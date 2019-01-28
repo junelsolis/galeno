@@ -7955,7 +7955,7 @@ table tr td:last-child {
 .physician .menu .items {
   flex-grow: 1;
   padding: 20px 0px 20px 0px;
-  color: #079992;
+  color: #96C6C3;
 }
 
 .physician .menu .items .menu-section {
@@ -7978,7 +7978,7 @@ table tr td:last-child {
 }
 
 .physician .menu .items .menu-section ul li.item {
-  text-indent: 25px;
+  text-indent: 8px;
 }
 
 .physician .menu .items .menu-section ul a {
@@ -8006,6 +8006,7 @@ table tr td:last-child {
   color: #079992;
   background-color: #1d2e38;
   min-height: 45px;
+  padding-right: 20px;
   display: flex;
   align-items: center;
 }
@@ -8017,7 +8018,12 @@ table tr td:last-child {
   flex-grow: 1;
 }
 
-.physician .sidebar .top i {
+.physician .sidebar .top a {
+  display: flex;
+  align-items: center;
+}
+
+.physician .sidebar .top a i {
   padding-left: 10px;
   font-size: 1.3rem;
   margin-right: 0;

@@ -77,7 +77,8 @@
       flex-grow: 1;
 
       padding: 20px 0px 20px 0px;
-      color: #079992;
+      // color: #079992;
+      color: #96C6C3;
 
       .menu-section {
 
@@ -99,7 +100,7 @@
           }
 
           li.item {
-            text-indent: 25px;
+            text-indent: 8px;
           }
 
           a {
@@ -133,6 +134,7 @@
       color: #079992;
       background-color: #1d2e38;
       min-height: 45px;
+      padding-right: 20px;
 
       display: flex;
       align-items: center;
@@ -145,11 +147,17 @@
         flex-grow: 1;
       }
 
-      i {
-        padding-left: 10px;
-        font-size: 1.3rem;
-        margin-right: 0;
+      a {
+        display: flex;
+        align-items: center;
+
+        i {
+          padding-left: 10px;
+          font-size: 1.3rem;
+          margin-right: 0;
+        }
       }
+
     }
 
     .items {
