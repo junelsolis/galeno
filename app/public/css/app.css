@@ -7804,6 +7804,20 @@ body {
   padding: 10px;
 }
 
+/* tables */
+
+table tr td {
+  padding: 4px 10px 4px 10px;
+}
+
+table tr td:last-child {
+  text-align: right;
+}
+
+.button.primary {
+  color: white;
+}
+
 .login {
   height: 100vh;
   background-color: white;
@@ -7896,8 +7910,26 @@ body {
   color: darkgrey;
 }
 
-.physician .middle .content {
-  padding: 50px 30px 50px 30px;
+.physician .middle .dashboard-content {
+  padding: 40px 30px 50px 30px;
+}
+
+.physician .middle .dashboard-content .section {
+  margin-bottom: 30px;
+}
+
+.physician .middle .dashboard-content .section .header {
+  border-bottom: lightgrey solid 1px;
+}
+
+.physician .middle .dashboard-content .section .header span {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #079992;
+}
+
+.physician .middle .dashboard-content .section table .button {
+  margin-bottom: 0;
 }
 
 .physician .menu {
@@ -7967,6 +7999,7 @@ body {
 
 .physician .sidebar {
   background-color: rgba(7, 153, 146, 0.18);
+  min-height: 100vh;
 }
 
 .physician .sidebar .top {
@@ -8025,21 +8058,4 @@ body {
   color: #1D4B49;
   font-size: 1.1rem;
   font-weight: bold;
-}
-
-.physician .dashboard {
-  margin: 50px 20px 50px 20px;
-}
-
-.physician .dashboard .widget {
-  background-color: white;
-  padding: 10px;
-  margin-bottom: 10px;
-  min-height: 10vh;
-}
-
-.physician .dashboard .widget .header span {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #1D4B49;
 }
