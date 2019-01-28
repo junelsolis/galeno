@@ -7880,12 +7880,24 @@ body {
   background-color: white;
 }
 
-.physician .content .search-bar {
-  background-color: red;
+.physician .middle .search-bar {
+  background-color: white;
+  border-bottom: #e8e8e8 solid 1px;
   min-height: 45px;
   position: sticky;
   position: -webkit-sticky;
   top: 0;
+  display: flex;
+  align-items: center;
+}
+
+.physician .middle .search-bar span {
+  margin-left: 25px;
+  color: darkgrey;
+}
+
+.physician .middle .content {
+  padding: 50px 30px 50px 30px;
 }
 
 .physician .menu {
@@ -7955,6 +7967,31 @@ body {
 
 .physician .sidebar {
   background-color: rgba(7, 153, 146, 0.18);
+}
+
+.physician .sidebar .top {
+  color: #079992;
+  background-color: #1d2e38;
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.physician .sidebar .top p {
+  font-size: 1.1rem;
+  text-align: right;
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
+.physician .sidebar .top i {
+  padding-left: 10px;
+  font-size: 1.3rem;
+  margin-right: 0;
+}
+
+.physician .sidebar .items {
+  padding: 20px;
 }
 
 .physician .chart {
