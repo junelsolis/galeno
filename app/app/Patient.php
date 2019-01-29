@@ -38,7 +38,7 @@ class Patient extends Model
 
       $dob = new Carbon($this->date_of_birth);
 
-      $string = $gender . ' ' . $dob->diffInYears(Carbon::now()) . 'y';
+      $string = $gender . ' ' . $dob->diffInYears(Carbon::now()) . 'Y';
 
       return $string;
     }

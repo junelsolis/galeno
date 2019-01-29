@@ -80,7 +80,7 @@ class PatientTest extends TestCase
       'date_of_birth' => Carbon::now()->subYears(35)
     ]);
 
-    $this->assertTrue($patient->details() == 'M 35y');
+    $this->assertTrue($patient->details() == 'M 35Y');
   }
 
 
