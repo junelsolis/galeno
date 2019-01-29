@@ -29,6 +29,30 @@ class User extends Authenticatable
       return $this->active;
     }
 
+    public function getFormattedNameAttribute() {
+
+      $array = array();
+
+
+      // initials
+      $names = explode(" ",$this->name);
+
+      $string = '';
+      foreach ($names as $i) {
+        $string = $string . $i[0];
+
+        $array['firstname'] = $names[0];
+        $array['lastname'] = $names[1];
+      }
+
+
+      $array['initials'] = $string;
+
+
+      return $array;
+
+    }
+
     protected $fillable = [
         'name', 'email', 'password',
     ];
@@ -36,4 +60,5 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
 }

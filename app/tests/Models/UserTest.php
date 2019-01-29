@@ -20,6 +20,7 @@ class UserTest extends TestCase
 
     $this->user = factory('App\User')->create([
       'id' => 33,
+      'name' => 'John Smith',
       'password' => 'This is a password.',
     ]);
   }
@@ -41,6 +42,16 @@ class UserTest extends TestCase
 
     $this->assertTrue($this->user->roles()->count() == 2);
 
+  }
+
+
+  /** @test */
+  public function a_user_has_formatted_names() {
+
+
+    $this->assertTrue($this->user['formattedName']['initials'] == 'JS');
+    $this->assertTrue($this->user['formattedName']['firstname'] == 'John');
+    $this->assertTrue($this->user['formattedName']['lastname'] == 'Smith');
   }
 
   /** @test */
@@ -66,6 +77,8 @@ class UserTest extends TestCase
     $this->user->enable();
     $this->assertTrue($this->user->isActive() == true);
   }
+
+
 
 
 
