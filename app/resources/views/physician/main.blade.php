@@ -17,6 +17,7 @@
               <span>Patients Today</span>
             </div>
             <div class='content'>
+              @if ($data['patientsToday']->count() > 0)
               <div class='table-scroll'>
                 <table class='striped'>
                   <thead>
@@ -29,37 +30,20 @@
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($data['patientsToday'] as $i)
                     <tr>
-                      <td>James Aberdeen Sr.</td>
-                      <td>M 56y</td>
-                      <td>persistent cough</td>
+                      <td>{{ $i->patient['formattedName']['fullname'] }}</td>
+                      <td>11</td>
+                      <td>11</td>
+                      <td>11</td>
                       <td></td>
-                      <td><a href=''><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;See Patient</a></td>
                     </tr>
-                    <tr>
-                      <td>James Aberdeen Sr.</td>
-                      <td>M 56y</td>
-                      <td>persistent cough</td>
-                      <td></td>
-                      <td><a href=''><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;See Patient</a></td>
-                    </tr>
-                    <tr>
-                      <td>James Aberdeen Sr.</td>
-                      <td>M 56y</td>
-                      <td>persistent cough</td>
-                      <td></td>
-                      <td><a href=''><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;See Patient</a></td>
-                    </tr>
-                    <tr>
-                      <td>James Aberdeen Sr.</td>
-                      <td>M 56y</td>
-                      <td>persistent cough</td>
-                      <td></td>
-                      <td><a href=''><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;See Patient</a></td>
-                    </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div>
+              @else
+              @endif
             </div>
           </div>
 
