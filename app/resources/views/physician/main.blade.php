@@ -34,7 +34,7 @@
                       <td>{{ $i->patient['formattedName']['fullname'] }}</td>
                       <td>{{ $i->patient->details() }}</td>
                       <td>{{ $i->chief_complaint }}</td>
-                      <td><a href=''><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;See Patient</a></td>
+                      <td><a href='/physician/patient/{{$i->patient->id}}'><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;See Patient</a></td>
                     </tr>
                     @endforeach
                   </tbody>

@@ -2,7 +2,7 @@
   <div data-sticky-container>
     <div class='wrapper' data-sticky data-options="marginTop:0;" style="width:100%">
       <div class='logo'>
-        <img src='images/medicoffice-logo.png' />
+        <img src='/images/medicoffice-logo.png' />
       </div>
       <div class='items'>
         <div class='menu-section'>

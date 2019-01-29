@@ -17,5 +17,6 @@ Route::post('/', 'LoginController@login')->middleware('guest');
 Route::get('/logout', 'LoginController@logout');
 
 Route::get('/physician', 'PhysicianController@main')->middleware('auth','physician');
+Route::get('/physician/patient/{id}', 'PhysicianController@patient')->middleware('auth','physician');
 
 Route::get('/admin', 'AdminController@main')->middleware('auth');

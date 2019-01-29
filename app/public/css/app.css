@@ -7951,6 +7951,41 @@ table tr td:last-child {
   margin-bottom: 0;
 }
 
+.physician .middle .patient-content .summary {
+  background-color: #ededed;
+  min-height: 40px;
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #1d2e38;
+}
+
+.physician .middle .patient-content .summary span {
+  margin-left: 8px;
+}
+
+.physician .middle .patient-content .patient-tabs .tabs {
+  border-style: none;
+  background-color: #ededed;
+}
+
+.physician .middle .patient-content .patient-tabs .tabs li {
+  margin-left: 15px;
+  background-color: rgba(7, 153, 146, 0.18);
+}
+
+.physician .middle .patient-content .patient-tabs .tabs li a {
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+.physician .middle .patient-content .patient-tabs .tabs li:hover {
+  background-color: #1d2e38;
+  transition-duration: 0.3s;
+}
+
 .physician .menu {
   background-color: #1d2e38;
   display: flex;
@@ -8084,4 +8119,3 @@ table tr td:last-child {
   font-size: 1.1rem;
   font-weight: bold;
 }
-
