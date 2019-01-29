@@ -29,7 +29,6 @@
       padding: 40px 30px 50px 30px;
 
       .section {
-
         margin-bottom: 30px;
         .header {
           span {
@@ -41,11 +40,17 @@
           border-bottom: lightgrey solid 1px;
         }
 
-        table {
-          .button {
-            margin-bottom: 0;
+        .content {
+          margin-top: 10px;
+
+          table {
+            .button {
+              margin-bottom: 0;
+            }
           }
         }
+
+
       }
     }
   }

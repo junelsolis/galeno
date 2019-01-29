@@ -1,4 +1,19 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito:400,400i,700);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito:400,400i,700);/*
+ * This combined file was created by the DataTables downloader builder:
+ *   https://datatables.net/download
+ *
+ * To rebuild or modify this file with the latest versions of the included
+ * software please visit:
+ *   https://datatables.net/download/#zf/dt-1.10.18
+ *
+ * Included libraries:
+ *   DataTables 1.10.18
+ */
+
+table.dataTable{clear:both;margin:0.5em 0 !important;max-width:none !important;width:100%}table.dataTable td,table.dataTable th{box-sizing:content-box}table.dataTable td.dataTables_empty,table.dataTable th.dataTables_empty{text-align:center}table.dataTable.nowrap th,table.dataTable.nowrap td{white-space:nowrap}div.dataTables_wrapper{position:relative}div.dataTables_wrapper div.dataTables_length label{float:left;text-align:left;margin-bottom:0}div.dataTables_wrapper div.dataTables_length select{width:75px;margin-bottom:0}div.dataTables_wrapper div.dataTables_filter label{float:right;margin-bottom:0}div.dataTables_wrapper div.dataTables_filter input{display:inline-block !important;width:auto !important;margin-bottom:0;margin-left:0.5em}div.dataTables_wrapper div.dataTables_info{padding-top:2px}div.dataTables_wrapper div.dataTables_paginate{float:right;margin:0}div.dataTables_wrapper div.dataTables_processing{position:absolute;top:50%;left:50%;width:200px;margin-left:-100px;margin-top:-26px;text-align:center;padding:1rem 0}table.dataTable thead>tr>th.sorting_asc,table.dataTable thead>tr>th.sorting_desc,table.dataTable thead>tr>th.sorting,table.dataTable thead>tr>td.sorting_asc,table.dataTable thead>tr>td.sorting_desc,table.dataTable thead>tr>td.sorting{padding-right:1.5rem}table.dataTable thead>tr>th:active,table.dataTable thead>tr>td:active{outline:none}table.dataTable thead .sorting,table.dataTable thead .sorting_asc,table.dataTable thead .sorting_desc,table.dataTable thead .sorting_asc_disabled,table.dataTable thead .sorting_desc_disabled{cursor:pointer}table.dataTable thead .sorting,table.dataTable thead .sorting_asc,table.dataTable thead .sorting_desc,table.dataTable thead .sorting_asc_disabled,table.dataTable thead .sorting_desc_disabled{background-repeat:no-repeat;background-position:center right}table.dataTable thead .sorting{background-image:url(/images/sort_both.png?9a6486086d09bb38cf66a57cc559ade3)}table.dataTable thead .sorting_asc{background-image:url(/images/sort_asc.png?9326ad44ae4bebdedd141e7a53c2a730)}table.dataTable thead .sorting_desc{background-image:url(/images/sort_desc.png?1fc418e33fd5a687290258b23fac4e98)}table.dataTable thead .sorting_asc_disabled{background-image:url(/images/sort_asc_disabled.png?d7dc10c78f23615d328581aebcd805eb)}table.dataTable thead .sorting_desc_disabled{background-image:url(/images/sort_desc_disabled.png?bda51e15154a18257b4f955a222fd66f)}div.dataTables_scrollHead table{margin-bottom:0 !important}div.dataTables_scrollBody table{border-top:none;margin-top:0 !important;margin-bottom:0 !important}div.dataTables_scrollBody table tbody tr:first-child th,div.dataTables_scrollBody table tbody tr:first-child td{border-top:none}div.dataTables_scrollFoot table{margin-top:0 !important;border-top:none}
+
+
+@charset "UTF-8";
 
 /**
  * Foundation for Sites by ZURB
@@ -7928,7 +7943,11 @@ table tr td:last-child {
   color: #079992;
 }
 
-.physician .middle .dashboard-content .section table .button {
+.physician .middle .dashboard-content .section .content {
+  margin-top: 10px;
+}
+
+.physician .middle .dashboard-content .section .content table .button {
   margin-bottom: 0;
 }
 
@@ -8065,3 +8084,4 @@ table tr td:last-child {
   font-size: 1.1rem;
   font-weight: bold;
 }
+

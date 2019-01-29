@@ -7,7 +7,7 @@
 // Include Everything (True) for the Flex Grid :);
 @include foundation-everything(true);
 
-
+@import '../DataTables/datatables.min.css';
 @import 'site-default.scss';
 @import 'login.scss';
 @import 'physician.scss';
