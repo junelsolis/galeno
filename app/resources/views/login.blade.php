@@ -21,6 +21,11 @@
             </span>
           </div>
 
+
+          <div class='info'>
+            <span><a><i class="fas fa-info-circle"></i>&nbsp;Info</a></span>
+          </div>
+
         </div>
         <div class='cell medium-6 right-box'>
           <form method='post' action='/'>
@@ -42,6 +47,7 @@
             @endif
 
           </form>
+
 
 
         </div>

@@ -7819,6 +7819,13 @@ body {
   padding: 10px;
 }
 
+/* fieldsets */
+
+.fieldset legend {
+  font-weight: bold;
+  color: #079992;
+}
+
 /* tables */
 
 table tr td {
@@ -7872,6 +7879,17 @@ table tr td:last-child {
   color: #707070;
 }
 
+.login .box .left-box .info span {
+  float: right;
+  color: #808080;
+  position: relative;
+  bottom: -30px;
+}
+
+.login .box .left-box .info span a {
+  color: #909090;
+}
+
 .login .box .right-box {
   background-color: #1d2e38;
   padding: 40px;
@@ -7913,6 +7931,7 @@ table tr td:last-child {
   background-color: white;
   border-bottom: #e8e8e8 solid 1px;
   min-height: 45px;
+  z-index: 500;
   position: sticky;
   position: -webkit-sticky;
   top: 0;
@@ -7969,6 +7988,7 @@ table tr td:last-child {
 .physician .middle .patient-content .patient-tabs .tabs {
   border-style: none;
   background-color: #ededed;
+  padding-top: 15px;
 }
 
 .physician .middle .patient-content .patient-tabs .tabs li {
@@ -7984,6 +8004,11 @@ table tr td:last-child {
 .physician .middle .patient-content .patient-tabs .tabs li:hover {
   background-color: #1d2e38;
   transition-duration: 0.3s;
+}
+
+.physician .middle .patient-content .tabs-content {
+  border-style: none;
+  border-width: 0;
 }
 
 .physician .menu {
@@ -8027,7 +8052,6 @@ table tr td:last-child {
 
 .physician .menu .items .menu-section ul li.header {
   margin-top: 20px;
-  text-transform: uppercase;
   font-weight: bold;
 }
 
@@ -8057,7 +8081,7 @@ table tr td:last-child {
 }
 
 .physician .sidebar .top {
-  color: #079992;
+  color: #96C6C3;
   background-color: #1d2e38;
   min-height: 45px;
   padding-right: 20px;

@@ -38,12 +38,27 @@
       }
 
       .text {
-
         margin-top: 40px;
         span {
           float:right;
           color: #707070;
         }
+      }
+
+
+      .info {
+        span {
+          float:right;
+          color: #808080;
+
+          position: relative;
+          bottom: -30px;
+
+          a {
+            color: #909090;
+          }
+        }
+
       }
 
 
@@ -68,6 +83,8 @@
           color: white;
         }
       }
+
+
     }
 
   }
