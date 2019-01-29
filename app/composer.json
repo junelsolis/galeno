@@ -13,7 +13,9 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
-        "zurb/foundation": "^6.5"
+        "zurb/foundation": "^6.5",
+        "nesbot/carbon": "2.10.1 as 1.34.0",
+        "kylekatarnls/laravel-carbon-2": "^1.0.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
