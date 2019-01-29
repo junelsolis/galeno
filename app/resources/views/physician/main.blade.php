@@ -25,7 +25,6 @@
                       <th>Patient Name</th>
                       <th>Details</th>
                       <th>Chief Complaint</th>
-                      <th>Reminders</th>
                       <th></th>
                     </tr>
                   </thead>
@@ -33,10 +32,9 @@
                     @foreach ($data['patientsToday'] as $i)
                     <tr>
                       <td>{{ $i->patient['formattedName']['fullname'] }}</td>
-                      <td>11</td>
-                      <td>11</td>
-                      <td>11</td>
-                      <td></td>
+                      <td>{{ $i->patient->details() }}</td>
+                      <td>{{ $i->chief_complaint }}</td>
+                      <td><a href=''><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;See Patient</a></td>
                     </tr>
                     @endforeach
                   </tbody>

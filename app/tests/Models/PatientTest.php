@@ -50,7 +50,7 @@ class PatientTest extends TestCase
     $patient = factory('App\Patient')->create([
       'date_of_birth' => new Carbon('July 23, 1995')
     ]);
-    
+
     $date = $patient['formattedDateOfBirth'];
 
     $this->assertTrue($date == '07/23/1995');
@@ -76,7 +76,11 @@ class PatientTest extends TestCase
   /** @test */
   public function a_patient_has_details() {
 
-    $this->assertTrue($this->patient->details() == 'M 35 y');
+    $patient = factory('App\Patient')->create([
+      'date_of_birth' => Carbon::now()->subYears(35)
+    ]);
+
+    $this->assertTrue($patient->details() == 'M 35y');
   }
 
 

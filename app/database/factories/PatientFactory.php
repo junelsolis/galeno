@@ -10,7 +10,7 @@ $factory->define(App\Patient::class, function (Faker $faker) {
     return [
         'name' => $faker->firstName($gender),
         'surname' => $faker->lastName,
-        'date_of_birth' => $faker->dateTimeBetween($startDate = '-75 years', $endDate = 'now', $timezone = null),
+        'date_of_birth' => $faker->dateTimeBetween($startDate = '-75 years', $endDate = '-2 years', $timezone = null),
         'gender' => $gender,
         'email' => $faker->email,
         'phone' => $faker->phoneNumber,
