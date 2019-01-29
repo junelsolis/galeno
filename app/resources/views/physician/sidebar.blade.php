@@ -16,9 +16,9 @@
 
 
         <hr />
-        Good morning, Junel!
+        Good morning, <strong>{{ Auth::user()['formattedName']['firstname']}}</strong>!
         <br /><br />
-        You have <strong>28</strong> patients waiting. There are <strong>15</strong> unsigned <a href=''></a>encounters.
+        You have <strong>{{ $data['patientsToday']->count() }}</strong> patients waiting. There are <strong>15</strong> unsigned <a href=''></a>encounters.
         <hr />
         <p style='color:grey; font-size:0.95rem;'>
           This is free software developed by <a href='https://www.junelsolis.com' target='_blank'>Junel Solis MD</a>.<br /><br />
