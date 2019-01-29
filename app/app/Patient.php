@@ -32,6 +32,17 @@ class Patient extends Model
       return $this->hasMany('App\Medication','patient_id');
     }
 
+    public function details() {
+
+      $gender = $this->gender;
+
+      $dob = Carbon::instance($this->date_of_birth);
+
+      $string = $gender . ' ' . $dob->diffInYears(Carbon::now()) . ' y';
+
+      return $string;
+    }
+
     public function getFormattedDateOfBirthAttribute() {
       $date = new Carbon($this->date_of_birth);
 

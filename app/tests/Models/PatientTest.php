@@ -18,10 +18,12 @@ class PatientTest extends TestCase
 {
 
   use RefreshDatabase;
+  use WithFaker;
 
   protected $patient;
   public function setUp() {
     parent::setUp();
+
 
     $this->patient = factory('App\Patient')->create([
       'id' => 10,
@@ -30,8 +32,9 @@ class PatientTest extends TestCase
       'middle_initial' => 'J',
       'surname' => 'Turing',
       'suffix' => 'Jr.',
+      'gender' => 'M',
       'provider_id' => factory('App\User')->create(['name' => 'James Bond'])->id,
-      'date_of_birth' => new Carbon('July 23, 1995')
+      'date_of_birth' => $this->faker->dateTimeBetween($startDate = '-35 years', $endDate = '-35 years', $timezone = null)
     ]);
   }
 
@@ -44,7 +47,11 @@ class PatientTest extends TestCase
   /** @test */
   public function a_patient_has_a_formatted_date_of_birth() {
 
-    $date = $this->patient['formattedDateOfBirth'];
+    $patient = factory('App\Patient')->create([
+      'date_of_birth' => new Carbon('July 23, 1995')
+    ]);
+    
+    $date = $patient['formattedDateOfBirth'];
 
     $this->assertTrue($date == '07/23/1995');
   }
@@ -64,6 +71,14 @@ class PatientTest extends TestCase
 
     $this->assertTrue($initials == 'AJT');
   }
+
+
+  /** @test */
+  public function a_patient_has_details() {
+
+    $this->assertTrue($this->patient->details() == 'M 35 y');
+  }
+
 
   /** @test */
   public function a_patient_has_encounters() {

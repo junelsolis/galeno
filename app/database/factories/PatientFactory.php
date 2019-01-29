@@ -5,7 +5,7 @@ use App\User;
 
 $factory->define(App\Patient::class, function (Faker $faker) {
 
-    $gender = $faker->randomElement(['male', 'female']);
+    $gender = $faker->randomElement(['M', 'F']);
 
     return [
         'name' => $faker->firstName($gender),

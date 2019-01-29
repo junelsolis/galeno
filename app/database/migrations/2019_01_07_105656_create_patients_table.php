@@ -21,7 +21,7 @@ class CreatePatientsTable extends Migration
             $table->string('surname');
             $table->string('suffix')->nullable();
             $table->date('date_of_birth');
-            $table->string('gender');
+            $table->enum('gender',['M','F']);
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->unsignedInteger('provider_id');
