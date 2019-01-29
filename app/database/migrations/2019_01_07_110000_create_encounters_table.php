@@ -18,6 +18,8 @@ class CreateEncountersTable extends Migration
             $table->unsignedInteger('patient_id');
             $table->unsignedInteger('provider_id');
             $table->dateTime('date');
+            $table->text('reminder')->nullable();
+            $table->text('chief_complaint')->nullable();
             $table->boolean('signed')->default(0);
             $table->timestamps();
         });

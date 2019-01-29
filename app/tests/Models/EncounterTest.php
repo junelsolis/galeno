@@ -32,6 +32,8 @@ class EncounterTest extends TestCase
         'id' => 66,
         'patient_id' => $this->patient->id,
         'provider_id' => $this->provider->id,
+        'chief_complaint' => 'persistent cough 2 months',
+        'reminder' => 'Patient is an outdoor enthusiast.',
       ]);
       $this->diagnosis = factory('App\Diagnosis')->create([
         'patient_id' => $this->patient->id,
@@ -70,6 +72,25 @@ class EncounterTest extends TestCase
 
       $this->assertTrue($this->encounter->provider->id == 33);
     }
+
+
+
+    /** @test */
+    public function an_encounter_has_a_chief_complaint() {
+
+      $this->assertTrue($this->encounter->chief_complaint == 'persistent cough 2 months');
+
+    }
+
+
+
+
+
+    /** @test */
+    public function an_encounter_has_a_reminder() {
+      $this->assertTrue($this->encounter->reminder == 'Patient is an outdoor enthusiast.');
+    }
+
 
 
     /** @test */
