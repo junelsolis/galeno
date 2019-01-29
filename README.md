@@ -6,7 +6,12 @@
 
 Some medical practices are severely under-equipped when it comes to maintaining patient records. Many still rely on paper to keep track of their patients. This web application aims to solve that problem in the simple, easy-to-use, and open-source way.
 
-### Requirements
+### Demo Site
+URL:  [https://medicoffice.junelsolis.com](https://medicoffice.junelsolis.com)<br>
+username: **jsmith**<br>
+password: **coolpassword**
+
+### System Requirements
 * Docker & Docker Compose
 
 ### Basic installation steps
