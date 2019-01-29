@@ -85,6 +85,16 @@ class PatientTest extends TestCase
 
 
   /** @test */
+  public function a_patient_has_an_age_string() {
+
+    $patient = factory('App\Patient')->create([
+      'date_of_birth' => Carbon::now()->subYears(57)
+    ]);
+
+    $this->assertTrue($patient->ageString() == '57 years old');
+  }
+
+  /** @test */
   public function a_patient_has_encounters() {
 
     factory('App\Encounter',3)->create([

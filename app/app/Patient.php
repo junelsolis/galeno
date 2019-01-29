@@ -43,6 +43,15 @@ class Patient extends Model
       return $string;
     }
 
+    public function ageString() {
+
+      $dob = new Carbon($this->date_of_birth);
+
+      $string = $dob->diffInYears(Carbon::now()) . ' years old';
+
+      return $string;
+    }
+
     public function getFormattedDateOfBirthAttribute() {
       $date = new Carbon($this->date_of_birth);
 
