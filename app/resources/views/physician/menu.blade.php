@@ -7,6 +7,11 @@
       <div class='items'>
         <div class='menu-section'>
           <ul>
+            <li class='header'><a href='/' style='padding-left:0;'><i class="fas fa-tachometer-alt"></i>&nbsp;Dashboard</a></li>
+          </ul>
+        </div>
+        <div class='menu-section'>
+          <ul>
             <li class='header'><i class="fas fa-user"></i>&nbsp;Patients</li>
               <li class='item'><a href=''>Patient Index</a></li>
               <li class='item'><a href=''>Assessments</a></li>

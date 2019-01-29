@@ -3,6 +3,8 @@
   // dark green
   // background-color: #1d2e38;
 
+  // green
+  // background-color: #079992;
 
 
   background-color: white;
@@ -14,6 +16,7 @@
       background-color: white;
       border-bottom: #e8e8e8 solid 1px;
       min-height: 45px;
+      z-index: 500;
 
       position: sticky;
       position: -webkit-sticky;
@@ -79,6 +82,7 @@
         .tabs {
           border-style: none;
           background-color: #ededed;
+          padding-top: 15px;
 
           li {
             margin-left: 15px;
@@ -95,6 +99,12 @@
           }
 
         }
+      }
+
+      .tabs-content {
+        border-style: none;
+        border-width: 0;
+
       }
     }
   }
@@ -144,7 +154,7 @@
 
           li.header {
             margin-top: 20px;
-            text-transform: uppercase;
+            // text-transform: uppercase;
             font-weight: bold;
           }
 
@@ -180,7 +190,8 @@
     min-height: 100vh;
 
     .top {
-      color: #079992;
+      // color: #079992;
+      color: #96C6C3;
       background-color: #1d2e38;
       min-height: 45px;
       padding-right: 20px;
