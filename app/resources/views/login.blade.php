@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    @include(header-tags)
+    @include('header-tags')
     <title>MedicOffice</title>
   </head>
   <body>
