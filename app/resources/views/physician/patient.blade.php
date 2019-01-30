@@ -23,10 +23,10 @@
           <div class='patient-tabs'>
             <ul class="tabs" data-tabs id="example-tabs">
               <li class="tabs-title is-active"><a href="#panel1" aria-selected="true"><i class="far fa-calendar-alt"></i>&nbsp;Today</a></li>
-              <li class="tabs-title"><a data-tabs-target="panel2" href="#panel2">Vital Signs</a></li>
-              <li class="tabs-title"><a data-tabs-target="panel2" href="#panel2">Visits & Notes</a></li>
-              <li class="tabs-title"><a data-tabs-target="panel2" href="#panel3">Diagnoses & Medications</a></li>
-              <li class="tabs-title"><a data-tabs-target="panel2" href="#panel4">Laboratory & Imaging</a></li>
+              <li class="tabs-title"><a data-tabs-target="panel2" href="#panel2"><i class="fas fa-heartbeat"></i>&nbsp;Vital Signs</a></li>
+              <li class="tabs-title"><a data-tabs-target="panel2" href="#panel2"><i class="fas fa-notes-medical"></i>&nbsp;Visits & Notes</a></li>
+              <li class="tabs-title"><a data-tabs-target="panel2" href="#panel3"><i class="fas fa-pills"></i>&nbsp;Diagnoses & Medications</a></li>
+              <li class="tabs-title"><a data-tabs-target="panel2" href="#panel4"><i class="fas fa-flask"></i>&nbsp;Laboratory & Imaging</a></li>
             </ul>
           </div>
 
