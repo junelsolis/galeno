@@ -11,6 +11,10 @@
       <div class='middle cell medium-6 large-8'>
         @include('physician.search-bar')
 
+        <div id='app'>
+          <patientcontent :data="'{{ json_encode($data) }}'"></patientcontent>
+        </div>
+
         <div class='patient-content'>
           <div class='summary'>
             @if ($data['patient']->gender == 'M')
@@ -73,6 +77,7 @@
           </div>
         </div>
 
+
       </div>
 
 
@@ -80,16 +85,17 @@
 
     </div>
 
-    <script>
+
+    <script type="text/javascript" src="/js/includes.js">
+
       $(document).foundation();
 
 
       $(document).ready( function () {
         $('#patientsTodayTable').DataTable();
       });
-
-
-
     </script>
+
+    <script src='/js/app.js'></script>
   </body>
 </html>

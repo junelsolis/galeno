@@ -11,7 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
-// mix.js('resources/js/app.js', 'public/js')
+mix.js('resources/js/app.js', 'public/js');
 //    .sass('resources/sass/app.scss', 'public/css');
 
 mix.sass('resources/sass/app.scss', 'public/css');
@@ -19,4 +19,5 @@ mix.combine([
     'node_modules/jquery/dist/jquery.min.js',
     'resources/DataTables/datatables.min.js',
     'node_modules/foundation-sites/dist/js/foundation.min.js',
-], 'public/js/app.js');
+
+], 'public/js/includes.js');
