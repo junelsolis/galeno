@@ -32,6 +32,24 @@ class Patient extends Model
       return $this->hasMany('App\Medication','patient_id');
     }
 
+    public function encountersToday() {
+      $encounters = $this->encounters;
+
+      foreach ($encounters as $key => $i) {
+        $date = new Carbon($i->date);
+
+        if ($date->isToday()) {}
+        else {
+          $encounters->forget($key);
+        }
+      }
+
+      $encounters->sortBy('date');
+      $encounter = $encounters->first();
+
+      return $encounter;
+    }
+
     public function details() {
 
       $gender = $this->gender;

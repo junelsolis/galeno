@@ -106,6 +106,22 @@ class PatientTest extends TestCase
   }
 
 
+
+  /** @test */
+  public function a_patient_has_encounter_today() {
+
+    factory('App\Encounter')->create([
+      'patient_id' => 10,
+      'date' => Carbon::now(),
+    ]);
+
+    $count = $this->patient->encountersToday()->count();
+
+    $this->assertTrue($count == 1);
+
+  }
+
+
   /** @test */
   public function a_patient_has_diagnoses() {
 
