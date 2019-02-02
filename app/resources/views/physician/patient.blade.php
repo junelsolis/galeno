@@ -5,15 +5,11 @@
     <title>Medicoffice | Provider</title>
   </head>
   <body class='physician'>
-    <div class='grid-x'>
+    <div id='app' class='grid-x'>
       @include('physician.menu')
 
       <div class='middle cell medium-6 large-8'>
         @include('physician.search-bar')
-
-        <div id='app'>
-          <patientcontent :data="'{{ json_encode($data) }}'"></patientcontent>
-        </div>
 
         <div class='patient-content'>
           <div class='summary'>
@@ -47,7 +43,8 @@
                 <legend>
                   Chief Complaint
                 </legend>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+                <patient-chief-complaint :encounter="{{ json_encode($data['patient']->encountersToday()) }}"></patient-chief-complaint>
               </fieldset>
               <fieldset class='fieldset'>
                 <legend>
@@ -96,6 +93,8 @@
       });
     </script>
 
-    <script src='/js/app.js'></script>
+    <script src='/js/app.js'>
+
+    </script>
   </body>
 </html>

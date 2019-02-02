@@ -29,6 +29,7 @@ class PhysicianController extends Controller
       $data['patient'] = $patient;
       $data['patientsToday'] = $this->patientsToday();
 
+
       return view('physician.patient')->with([
         'data' => $data
       ]);
