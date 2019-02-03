@@ -30,6 +30,11 @@ class PatientSeeder extends Seeder
               'provider_id' => 2,
               'date' => Carbon::now()
             ]);
+
+            factory('App\Diagnosis',3)->create([
+              'patient_id' => $patient->id,
+              'provider_id' => 2,
+            ]);
           }
 
           $count++;
