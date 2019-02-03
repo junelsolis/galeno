@@ -22,4 +22,17 @@ class EncounterController extends Controller
       return response(200);
     }
 
+    public function getNote() {
+      return 'Get Note';
+    }
+
+    public function editNote(Request $request) {
+      $encounter = Encounter::find($request['id']);
+
+      $encounter->note = $request['note'];
+      $encounter->save();
+
+      return response(200);
+    }
+
 }

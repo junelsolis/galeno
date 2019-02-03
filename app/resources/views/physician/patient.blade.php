@@ -44,14 +44,15 @@
                   Chief Complaint
                 </legend>
 
-                <patient-chief-complaint :encounter="{{ json_encode($data['patient']->encountersToday()) }}"></patient-chief-complaint>
+                <encounter-chief-complaint :encounter="{{ json_encode($data['patient']->encountersToday()) }}"></patient-chief-encounter>
 
               </fieldset>
               <fieldset class='fieldset'>
                 <legend>
                   Note
                 </legend>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                <encounter-note :encounter="{{ json_encode($data['patient']->encountersToday()) }}"></encounter-note>
               </fieldset>
 
               <fieldset class='fieldset'>
