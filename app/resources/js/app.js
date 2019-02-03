@@ -30,8 +30,9 @@ Vue.component('patient-chief-complaint', require('./components/physician/patient
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app'
+const patientChart = new Vue({
+    el: '#patient-chart',
+
 });
 
 // const patient = new Vue({

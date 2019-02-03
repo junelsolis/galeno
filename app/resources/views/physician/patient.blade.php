@@ -5,13 +5,13 @@
     <title>Medicoffice | Provider</title>
   </head>
   <body class='physician'>
-    <div id='app' class='grid-x'>
+    <div class='grid-x'>
       @include('physician.menu')
 
       <div class='middle cell medium-6 large-8'>
         @include('physician.search-bar')
 
-        <div class='patient-content'>
+        <div id='patient-chart' class='patient-content'>
           <div class='summary'>
             @if ($data['patient']->gender == 'M')
             <i class="fas fa-male"></i>
@@ -45,6 +45,7 @@
                 </legend>
 
                 <patient-chief-complaint :encounter="{{ json_encode($data['patient']->encountersToday()) }}"></patient-chief-complaint>
+
               </fieldset>
               <fieldset class='fieldset'>
                 <legend>
@@ -87,10 +88,6 @@
 
       $(document).foundation();
 
-
-      $(document).ready( function () {
-        $('#patientsTodayTable').DataTable();
-      });
     </script>
 
     <script src='/js/app.js'>

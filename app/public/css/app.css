@@ -3835,13 +3835,13 @@ ol.no-bullet {
 
 .button.primary {
   background-color: #079992;
-  color: #0a0a0a;
+  color: #fefefe;
 }
 
 .button.primary:hover,
 .button.primary:focus {
   background-color: #067a75;
-  color: #0a0a0a;
+  color: #fefefe;
 }
 
 .button.secondary {
@@ -3857,24 +3857,24 @@ ol.no-bullet {
 
 .button.success {
   background-color: #3adb76;
-  color: #0a0a0a;
+  color: #fefefe;
 }
 
 .button.success:hover,
 .button.success:focus {
   background-color: #22bb5b;
-  color: #0a0a0a;
+  color: #fefefe;
 }
 
 .button.warning {
   background-color: #ffae00;
-  color: #0a0a0a;
+  color: #fefefe;
 }
 
 .button.warning:hover,
 .button.warning:focus {
   background-color: #cc8b00;
-  color: #0a0a0a;
+  color: #fefefe;
 }
 
 .button.alert {
@@ -3917,7 +3917,7 @@ ol.no-bullet {
 .button[disabled].primary:hover,
 .button[disabled].primary:focus {
   background-color: #079992;
-  color: #0a0a0a;
+  color: #fefefe;
 }
 
 .button.disabled.secondary,
@@ -3949,7 +3949,7 @@ ol.no-bullet {
 .button[disabled].success:hover,
 .button[disabled].success:focus {
   background-color: #3adb76;
-  color: #0a0a0a;
+  color: #fefefe;
 }
 
 .button.disabled.warning,
@@ -3965,7 +3965,7 @@ ol.no-bullet {
 .button[disabled].warning:hover,
 .button[disabled].warning:focus {
   background-color: #ffae00;
-  color: #0a0a0a;
+  color: #fefefe;
 }
 
 .button.disabled.alert,
@@ -4420,13 +4420,13 @@ a.button:focus {
 
 .button-group.primary .button {
   background-color: #079992;
-  color: #0a0a0a;
+  color: #fefefe;
 }
 
 .button-group.primary .button:hover,
 .button-group.primary .button:focus {
   background-color: #067a75;
-  color: #0a0a0a;
+  color: #fefefe;
 }
 
 .button-group.secondary .button {
@@ -4442,24 +4442,24 @@ a.button:focus {
 
 .button-group.success .button {
   background-color: #3adb76;
-  color: #0a0a0a;
+  color: #fefefe;
 }
 
 .button-group.success .button:hover,
 .button-group.success .button:focus {
   background-color: #22bb5b;
-  color: #0a0a0a;
+  color: #fefefe;
 }
 
 .button-group.warning .button {
   background-color: #ffae00;
-  color: #0a0a0a;
+  color: #fefefe;
 }
 
 .button-group.warning .button:hover,
 .button-group.warning .button:focus {
   background-color: #cc8b00;
-  color: #0a0a0a;
+  color: #fefefe;
 }
 
 .button-group.alert .button {
@@ -7839,6 +7839,15 @@ table tr td:last-child {
 
 .button.primary {
   color: white;
+}
+
+.vue-input {
+  margin-bottom: 0px;
+  border-style: none;
+  box-shadow: 0 0 0 0;
+  color: #1d2e38;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .login {

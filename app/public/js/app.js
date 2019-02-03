@@ -104,10 +104,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['encounter'],
-  mounted: function mounted() {
-    console.log(this.encounter);
+  data: function data() {
+    return {
+      beingEdited: false,
+      original: this.encounter.chief_complaint
+    };
+  },
+  methods: {
+    enable: function enable() {
+      this.beingEdited = true;
+    },
+    disable: function disable() {
+      this.beingEdited = false;
+      this.encounter.chief_complaint = this.original;
+    },
+    save: function save() {}
   }
 });
 
@@ -596,70 +613,80 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticStyle: { display: "flex", "align-items": "center" } },
-    [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.encounter.chief_complaint,
-            expression: "encounter.chief_complaint"
-          }
-        ],
-        staticStyle: { "border-style": "none" },
-        attrs: { placeholder: "" },
-        domProps: { value: _vm.encounter.chief_complaint },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
+  return _c("div", { staticClass: "grid-x align-middle" }, [
+    _c(
+      "div",
+      { staticClass: "cell medium-6", staticStyle: { display: "flex" } },
+      [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.encounter.chief_complaint,
+              expression: "encounter.chief_complaint"
             }
-            _vm.$set(_vm.encounter, "chief_complaint", $event.target.value)
+          ],
+          staticClass: "vue-input",
+          staticStyle: { "margin-bottom": "0" },
+          attrs: { type: "text" },
+          domProps: { value: _vm.encounter.chief_complaint },
+          on: {
+            focus: function($event) {
+              _vm.enable()
+            },
+            blur: function($event) {
+              _vm.disable()
+            },
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.encounter, "chief_complaint", $event.target.value)
+            }
           }
-        }
-      }),
-      _vm._v(" "),
-      _vm._m(0),
-      _vm._v(" "),
-      _vm._m(1)
-    ]
-  )
+        })
+      ]
+    ),
+    _vm._v(" "),
+    _vm.beingEdited
+      ? _c("div", { staticClass: "cell medium-6" }, [
+          _c(
+            "a",
+            {
+              staticClass: "primary small button",
+              staticStyle: { "margin-left": "10px", "margin-bottom": "0" },
+              on: {
+                click: function($event) {
+                  _vm.save()
+                }
+              }
+            },
+            [_c("i", { staticClass: "fas fa-check" }), _vm._v(" Save")]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "hollow small button",
+              staticStyle: {
+                "margin-left": "5px",
+                "margin-bottom": "0",
+                color: "lightgrey"
+              },
+              on: {
+                click: function($event) {
+                  _vm.disable()
+                }
+              }
+            },
+            [_c("i", { staticClass: "fas fa-times" }), _vm._v(" Cancel")]
+          )
+        ])
+      : _vm._e()
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "primary tiny button",
-        staticStyle: { "margin-left": "10px", "margin-bottom": "0" }
-      },
-      [_c("i", { staticClass: "fas fa-check" })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "warning tiny button",
-        staticStyle: {
-          "margin-left": "5px",
-          "margin-bottom": "0",
-          color: "lightgrey"
-        }
-      },
-      [_c("i", { staticClass: "fas fa-times" })]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -11921,8 +11948,8 @@ Vue.component('patient-chief-complaint', __webpack_require__(/*! ./components/ph
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-var app = new Vue({
-  el: '#app'
+var patientChart = new Vue({
+  el: '#patient-chart'
 }); // const patient = new Vue({
 //   el: '#physician'
 // });
