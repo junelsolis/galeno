@@ -1,7 +1,7 @@
 <template>
   <div class='grid-x align-middle'>
     <div class='cell medium-6' style='display:flex;'>
-      <input class='vue-input' @focus='enable()' @blur='disable()' type='text' v-model='encounter.chief_complaint' style='margin-bottom:0;'/>
+      <input id='input' class='vue-input' @focus='enable()' type='text' v-model='encounter.chief_complaint' style='margin-bottom:0;'/>
     </div>
     <div v-if='beingEdited' class='cell medium-6'>
       <a @click='save()' style='margin-left:10px;margin-bottom:0;' class='primary small button'><i class="fas fa-check"></i>&nbsp;Save</a>
@@ -13,6 +13,8 @@
 
 <script>
 
+    const axios = require('axios');
+
     export default {
 
 
@@ -20,7 +22,7 @@
       data: function() {
         return {
           beingEdited: false,
-          original: this.encounter.chief_complaint
+          original: this.encounter.chief_complaint,
         }
       },
       methods: {
@@ -31,12 +33,24 @@
 
         disable() {
           this.beingEdited = false;
-          this.encounter.chief_complaint = this.original;
         },
 
         save() {
+          this.original = this.encounter.chief_complaint;
 
+          axios.post('/ajax/encounter/' + this.encounter.id + '/chief-complaint', {
+            value: this.encounter.chief_complaint,
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
+          this.disable();
         }
+
 
       },
     }
