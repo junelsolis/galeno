@@ -446,7 +446,7 @@ $input-shadow-focus: 0 0 5px $medium-gray;
 $input-cursor-disabled: not-allowed;
 $input-transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
 $input-number-spinners: true;
-$input-radius: $global-radius;
+$input-radius: 0px; //$global-radius;
 $form-button-radius: $global-radius;
 
 // 21. Label
@@ -458,7 +458,7 @@ $label-color-alt: $black;
 $label-palette: $foundation-palette;
 $label-font-size: 0.8rem;
 $label-padding: 0.33333rem 0.5rem;
-$label-radius: $global-radius;
+$label-radius: 0px; //$global-radius;
 
 // 22. Media Object
 // ----------------

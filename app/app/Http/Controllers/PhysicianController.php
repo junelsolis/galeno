@@ -26,7 +26,7 @@ class PhysicianController extends Controller
 
       $patient = Patient::find($request['id']);
 
-      $data['patient'] = $patient;
+      $data['patient'] = $patient->load(['encounters','diagnoses','vitals','medications']);
       $data['patientsToday'] = $this->patientsToday();
 
 

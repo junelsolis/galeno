@@ -57,9 +57,11 @@
 
               <fieldset class='fieldset'>
                 <legend>
-                  Problem List
+                  Diagnosis / Problem List
                 </legend>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+
+                <patient-problem-list :encounter="{{ json_encode($data['patient']->encountersToday()) }}" :list="{{ json_encode($data['patient']->diagnoses) }}"></patient-problem-list>
               </fieldset>
 
               <fieldset class='fieldset'>

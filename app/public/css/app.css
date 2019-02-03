@@ -326,7 +326,7 @@ textarea {
   margin: 0 0 1rem;
   padding: 0.5rem;
   border: 1px solid #cacaca;
-  border-radius: 3px;
+  border-radius: 0px;
   background-color: #fefefe;
   box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
   font-family: inherit;
@@ -465,12 +465,12 @@ label.middle {
 
 .input-group > :first-child,
 .input-group > :first-child.input-group-button > * {
-  border-radius: 3px 0 0 3px;
+  border-radius: 0px 0 0 0px;
 }
 
 .input-group > :last-child,
 .input-group > :last-child.input-group-button > * {
-  border-radius: 0 3px 3px 0;
+  border-radius: 0 0px 0px 0;
 }
 
 .input-group-button a,
@@ -4566,7 +4566,7 @@ a.button:focus {
 .label {
   display: inline-block;
   padding: 0.33333rem 0.5rem;
-  border-radius: 3px;
+  border-radius: 0px;
   font-size: 0.8rem;
   line-height: 1;
   white-space: nowrap;
@@ -7848,6 +7848,21 @@ table tr td:last-child {
   color: #1d2e38;
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+.vue-textarea {
+  margin-bottom: 0px;
+  border-style: none;
+  box-shadow: 0 0 0 0;
+  color: #1d2e38;
+  font-size: 1.2rem;
+}
+
+.vue-problem-list {
+  list-style: none;
+  margin-left: 0;
+  color: #1d2e38;
+  font-size: 1.1rem;
 }
 
 .login {

@@ -11,7 +11,7 @@ services:
       - "./app:/var/www/html"
       - "./nginx:/etc/nginx/"
     ports:
-      - "127.0.0.1:9300:80"
+      - "9300:80"
 
 
   php:
