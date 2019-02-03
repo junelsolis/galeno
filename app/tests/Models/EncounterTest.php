@@ -34,6 +34,7 @@ class EncounterTest extends TestCase
         'provider_id' => $this->provider->id,
         'chief_complaint' => 'persistent cough 2 months',
         'reminder' => 'Patient is an outdoor enthusiast.',
+        'note' => 'lorem ipsum dolor sit amet.'
       ]);
       $this->diagnosis = factory('App\Diagnosis')->create([
         'patient_id' => $this->patient->id,
@@ -140,5 +141,14 @@ class EncounterTest extends TestCase
 
       $this->assertTrue($this->encounter->signed == false);
 
+    }
+
+
+
+    /** @test */
+    public function an_encounter_has_a_note() {
+      $note = $this->encounter->note;
+
+      $this->assertTrue($note == 'lorem ipsum dolor sit amet.');
     }
 }

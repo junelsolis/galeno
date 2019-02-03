@@ -20,6 +20,7 @@ class CreateEncountersTable extends Migration
             $table->dateTime('date');
             $table->text('reminder')->nullable();
             $table->text('chief_complaint')->nullable();
+            $table->text('note')->nullable();
             $table->boolean('signed')->default(0);
             $table->timestamps();
         });
