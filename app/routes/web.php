@@ -22,7 +22,7 @@ Route::get('/physician/patient/{id}', 'PhysicianController@patient')->middleware
 Route::get('/admin', 'AdminController@main')->middleware('auth');
 
 
-// AJAX routes1
+// AJAX routes
 Route::get('/ajax/encounter/{id}/chief-complaint', 'EncounterController@getChiefComplaint')->middleware('auth');
 Route::post('/ajax/encounter/{id}/chief-complaint', 'EncounterController@editChiefComplaint')->middleware('auth');
 Route::get('/ajax/encounter/{id}/note', 'EncounterController@getNote')->middleware('auth');
@@ -31,3 +31,7 @@ Route::post('/ajax/encounter/{id}/note', 'EncounterController@editNote')->middle
 Route::get('/ajax/encounter/{id}/diagnosis', 'EncounterController@getDiagnosis')->middleware('auth');
 Route::post('/ajax/encounter/{id}/diagnosis', 'EncounterController@addDiagnosis')->middleware('auth');
 Route::post('/ajax/encounter/{encounter_id}/diagnosis/{diagnosis_id}/edit', 'EncounterController@editDiagnosis')->middleware('auth');
+
+
+Route::post('/ajax/diagnosis/{id}/disable', 'DiagnosisController@disable')->middleware('auth','physician');
+Route::post('/ajax/diagnosis/{id}/delete', 'DiagnosisController@delete')->middleware('auth','physician');

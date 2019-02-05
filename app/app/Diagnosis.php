@@ -35,4 +35,13 @@ class Diagnosis extends Model
     }
 
     protected $table = 'diagnoses';
+
+    protected $fillable = [
+      'encounter_id',
+      'patient_id',
+      'provider_id',
+      'active',
+      'name',
+      'icd_10_code'
+    ];
 }

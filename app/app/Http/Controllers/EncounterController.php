@@ -53,19 +53,18 @@ class EncounterController extends Controller
       $provider = Auth::user();
 
       // create new diagnosis
-      $diagnosis = new Diagnosis;
+      $diagnosis = Diagnosis::create([
+        'encounter_id' => $encounter->id,
+        'patient_id' => $patient->id,
+        'provider_id' => $provider->id,
+        'active' => true,
+        'name' => $request['name'],
+        'icd_10_code' => $request['code'],
+      ]);
 
-      $diagnosis->encounter_id = $encounter->id;
-      $diagnosis->patient_id = $patient->id;
-      $diagnosis->provider_id = $provider->id;
-      $diagnosis->active = true;
-      $diagnosis->icd_10_code = $request['code'];
-      $diagnosis->name = $request['name'];
-
-      $diagnosis->save();
-
-
-      return response(200);
+      return response()->json([
+        'id' => $diagnosis->id
+      ]);
 
 
     }
