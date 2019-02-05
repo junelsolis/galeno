@@ -1907,6 +1907,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1915,25 +1930,42 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
     return {
       addHidden: true,
       name: '',
-      code: ''
+      code: '',
+      showInactive: false
     };
   },
   methods: {
     toggleAdd: function toggleAdd() {
       this.addHidden = !this.addHidden;
     },
-    save: function save() {
-      axios.post('/ajax/encounter/' + this.encounter.id + '/diagnosis', {
-        name: this.name,
-        code: this.code
+    disable: function disable() {},
+    deleteDiagnosis: function deleteDiagnosis(id, index) {
+      axios.post('/ajax/diagnosis/' + id + '/delete', {}).then(function (response) {
+        console.log(response);
       }).catch(function (error) {
         console.log(error);
       });
+      this.list.splice(index, 1);
+    },
+    save: function save() {
+      var result = this.postSaveDiagnosis();
       var item = {
-        name: this.name
+        id: result,
+        name: this.name,
+        active: 1
       };
+      console.log(item);
       this.list.push(item);
       this.addHidden = true;
+    },
+    postSaveDiagnosis: function postSaveDiagnosis() {
+      result = axios.post('/ajax/encouter/' + this.encounter.id + '/diagnosis/', {
+        name: this.name,
+        code: this.code
+      }).then(function (response) {
+        console.log('Returned id: ' + response.data.id);
+        return response.data.id;
+      });
     }
   }
 });
@@ -2559,7 +2591,7 @@ var render = function() {
           }
         ],
         staticClass: "vue-textarea",
-        staticStyle: { "margin-bottom": "0", "min-height": "5em" },
+        staticStyle: { "margin-bottom": "0", "min-height": "10em" },
         attrs: { id: "input", type: "text", placeholder: "Insert note here." },
         domProps: { value: _vm.encounter.note },
         on: {
@@ -2645,10 +2677,46 @@ var render = function() {
       _c(
         "ul",
         { staticClass: "vue-problem-list" },
-        _vm._l(_vm.list, function(item) {
-          return _c("li", [
-            _vm._v("\n        — " + _vm._s(item.name) + "\n      ")
-          ])
+        _vm._l(_vm.list, function(item, index) {
+          return item.active
+            ? _c(
+                "li",
+                {
+                  model: {
+                    value: _vm.list,
+                    callback: function($$v) {
+                      _vm.list = $$v
+                    },
+                    expression: "list"
+                  }
+                },
+                [
+                  _vm._v("\n        — " + _vm._s(item.name) + "   \n        "),
+                  item.active
+                    ? _c("a", { staticClass: "active" }, [_vm._v("[Active]")])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  !item.active
+                    ? _c("a", { staticClass: "inactive" }, [
+                        _vm._v("[Inactive]")
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "delete",
+                      on: {
+                        click: function($event) {
+                          _vm.deleteDiagnosis(item.id, index)
+                        }
+                      }
+                    },
+                    [_vm._v("[Delete]")]
+                  )
+                ]
+              )
+            : _vm._e()
         }),
         0
       )
@@ -2768,10 +2836,54 @@ var render = function() {
         },
         [_c("i", { staticClass: "fas fa-plus" }), _vm._v(" Add")]
       )
-    ])
+    ]),
+    _vm._v(" "),
+    _vm._m(0)
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "cell small-12", staticStyle: { display: "flex" } },
+      [
+        _c(
+          "div",
+          { staticClass: "tiny switch", staticStyle: { "margin-top": "20px" } },
+          [
+            _c("input", {
+              staticClass: "switch-input",
+              attrs: {
+                id: "exampleSwitch",
+                type: "checkbox",
+                name: "exampleSwitch"
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "label",
+              { staticClass: "switch-paddle", attrs: { for: "exampleSwitch" } },
+              [
+                _c("span", { staticClass: "show-for-sr" }, [
+                  _vm._v("Download Kittens")
+                ])
+              ]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "p",
+          { staticStyle: { "margin-left": "10px", "margin-top": "20px" } },
+          [_vm._v("\n      Show inactive diagnoses\n    ")]
+        )
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 

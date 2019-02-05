@@ -60,8 +60,7 @@
                   Diagnosis / Problem List
                 </legend>
 
-
-                <patient-problem-list :encounter="{{ json_encode($data['patient']->encountersToday()) }}" :list="{{ json_encode($data['patient']->diagnoses) }}"></patient-problem-list>
+                <patient-problem-list :encounter='{{ json_encode($data['patient']->encountersToday())}}' :list='{{ json_encode($data['patient']->diagnoses)}}'></patient-problem-list>
               </fieldset>
 
               <fieldset class='fieldset'>

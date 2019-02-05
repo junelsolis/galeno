@@ -2,8 +2,11 @@
   <div class='grid-x align-middle'>
     <div class='cell small-12'>
       <ul class='vue-problem-list'>
-        <li v-for='item in list'>
-          &mdash;&nbsp;{{ item.name }}
+        <li v-for='(item, index) in list' v-if='item.active' v-model='list'>
+          &mdash;&nbsp;{{ item.name }} &nbsp;&nbsp;
+          <a v-if='item.active' class='active'>[Active]</a>
+          <a v-if='!item.active' class='inactive'>[Inactive]</a>
+          <a class='delete' v-on:click='deleteDiagnosis(item.id,index)'>[Delete]</a>
         </li>
       </ul>
     </div>
@@ -25,6 +28,18 @@
     </div>
     <div class='cell small-12'>
       <a @click='toggleAdd()'><i class="fas fa-plus"></i>&nbsp;Add</a>
+
+    </div>
+    <div class='cell small-12' style='display:flex;'>
+      <div class="tiny switch" style='margin-top: 20px;'>
+        <input class="switch-input" id="exampleSwitch" type="checkbox" name="exampleSwitch">
+        <label class="switch-paddle" for="exampleSwitch">
+          <span class="show-for-sr">Download Kittens</span>
+        </label>
+      </div>
+      <p style='margin-left: 10px; margin-top: 20px;'>
+        Show inactive diagnoses
+      </p>
     </div>
   </div>
 
@@ -42,6 +57,7 @@
         addHidden: true,
         name: '',
         code: '',
+        showInactive: false,
       }
     },
 
@@ -50,25 +66,49 @@
         this.addHidden = !this.addHidden;
       },
 
+      disable() {},
 
-      save() {
+      deleteDiagnosis(id,index) {
 
+        axios.post('/ajax/diagnosis/' + id + '/delete', {
 
-        axios.post('/ajax/encounter/' + this.encounter.id + '/diagnosis', {
-          name: this.name,
-          code: this.code,
+        })
+        .then(function (response) {
+          console.log(response);
         })
         .catch(function (error) {
           console.log(error);
         });
 
+        this.list.splice(index,1);
+
+      },
+
+      save() {
+
+        var result = this.postSaveDiagnosis();
+
         var item = {
+          id: result,
           name: this.name,
-        }
+          active: 1,
+        };
+
+        console.log(item);
 
         this.list.push(item);
         this.addHidden = true;
 
+      },
+
+      postSaveDiagnosis() {
+        result = axios.post('/ajax/encouter/' + this.encounter.id + '/diagnosis/', {
+          name: this.name,
+          code: this.code,
+        }).then(function (response) {
+          console.log('Returned id: ' + response.data.id);
+          return response.data.id;
+        });
       }
     }
   }

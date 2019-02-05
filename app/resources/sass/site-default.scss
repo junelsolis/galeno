@@ -81,4 +81,25 @@ table {
   // font-weight: bold;
   font-size: 1.1rem;
 
+  .active {
+    font-weight: bold;
+    color: #96C6C3;
+  }
+
+  .active:hover {
+    color: #1d2e38;
+    transition-duration: 0.5s;
+    content: 'Disable';
+  }
+
+  .delete {
+    color:lightgrey;
+    font-weight:bold;
+  }
+
+  .delete:hover {
+    color: $warning-color;
+    transition-duration: 0.5s;
+  }
+
 }
