@@ -11,6 +11,14 @@ URL:  [https://medicoffice.junelsolis.com](https://medicoffice.junelsolis.com)<b
 username: **jsmith**<br>
 password: **coolpassword**
 
+### How to run the demo on your own server/computer
+1. Clone this repository
+1. cd to the project directory
+1. Run demo setup script: `./demo-setup.sh`
+1. Copy `secrets/db_root_password` contents to `DB_PASSWORD` in the `app\.env` file.
+1. Run database migration: `docker-compose exec php php artisan migrate --seed`
+
+
 ### System Requirements
 * Docker & Docker Compose
 
