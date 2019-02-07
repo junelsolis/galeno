@@ -2,10 +2,10 @@
   <div data-sticky-container>
     <div class='wrapper' data-sticky data-options="marginTop:0;" style="width:100%">
 
-      <div class='top'>
+      <!-- <div class='top'>
         <p><strong>{{ Auth::user()->name }}</strong> | Physician</p>
         <a><i id='bars' class="fas fa-bars"></i></a>
-      </div>
+      </div> -->
 
 
       <div class='items'>
