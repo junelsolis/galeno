@@ -4,7 +4,7 @@
 ![](https://img.shields.io/github/last-commit/junelsolis/medicoffice.svg)
 <hr>
 
-Some medical practices are severely under-equipped when it comes to maintaining patient records. Many still rely on paper to keep track of their patients. This web application aims to solve that problem in the simple, easy-to-use, and open-source way.
+Some medical practices are under-equipped when it comes to maintaining patient records. Many still rely on paper to keep track of their patients. This web application aims to solve that problem in the simple, easy-to-use, and open-source way.
 
 ### Demo Site
 URL:  [https://medicoffice.junelsolis.com](https://medicoffice.junelsolis.com)<br>
