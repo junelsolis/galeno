@@ -108,6 +108,9 @@ table {
   border: 1px solid lightgrey;
   margin: 10px;
 
+  -webkit-box-shadow: 3px 4px 4px -1px rgba(0,0,0,0.19);
+  box-shadow: 3px 4px 4px -1px rgba(0,0,0,0.19);
+
 
   .left {
     background-color: rgba(7,153,146,0.18);
@@ -123,7 +126,8 @@ table {
       justify-content: center;
       i {
 
-        color: #1d2e38;
+        // color: #1d2e38;
+        color: #139690;
         font-size: 4.2rem;
 
         margin-left: auto;
@@ -133,7 +137,7 @@ table {
   }
 
   .right {
-    padding: 10px;
+    padding: 10px 10px 10px 15px;
 
     .name {
       font-weight: bold;
