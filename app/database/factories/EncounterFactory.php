@@ -8,22 +8,22 @@ use App\User;
 $factory->define(App\Encounter::class, function (Faker $faker) {
 
     $chief_complaints = [
-      'chest pain',
-      'shortness of breath',
-      'abdominal pain',
-      'back pain',
-      'flank pain',
-      'headache',
-      'joint pain',
-      'coughing',
-      'runny nose',
-      'sore throat',
-      'diarrhea',
-      'constipation',
-      'painful urination',
-      'fatigue',
-      'headaches',
-      'ear pain'
+      'Chest pain',
+      'Shortness of breath',
+      'Abdominal pain',
+      'Back pain',
+      'Flank pain',
+      'Headache',
+      'Joint pain',
+      'Coughing',
+      'Runny nose',
+      'Sore throat',
+      'Diarrhea',
+      'Constipation',
+      'Painful urination',
+      'Fatigue',
+      'Headaches',
+      'Ear pain'
     ];
 
     return [
