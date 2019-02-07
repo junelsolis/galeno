@@ -47,7 +47,7 @@
                             {{ $i->chief_complaint }}
                           </div>
                           <div>
-                            <a href=''><i class="fas fa-chevron-right"></i>&nbsp;See Patient</a>
+                            <a href='/physician/patient/{{ $i->patient->id }}'><i class="fas fa-chevron-right"></i>&nbsp;See Patient</a>
                           </div>
                         </div>
                       </div>
