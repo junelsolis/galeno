@@ -5,11 +5,13 @@
     <title>Medicoffice | Provider</title>
   </head>
   <body class='physician'>
+
+    @include('provider-top-bar')
+
     <div class='grid-x'>
       @include('physician.menu')
 
       <div class='middle cell medium-6 large-8'>
-        @include('physician.search-bar')
 
         <div id='patient-chart' class='patient-content'>
           <div class='summary'>
