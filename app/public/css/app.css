@@ -7886,6 +7886,44 @@ table tr td:last-child {
   transition-duration: 0.5s;
 }
 
+.vue-patient-card {
+  border: 1px solid lightgrey;
+  margin: 10px;
+}
+
+.vue-patient-card .left {
+  background-color: rgba(7, 153, 146, 0.18);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vue-patient-card .left .icon {
+  display: flex;
+  justify-content: center;
+}
+
+.vue-patient-card .left .icon i {
+  color: #1d2e38;
+  font-size: 4.2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vue-patient-card .right {
+  padding: 10px;
+}
+
+.vue-patient-card .right .name {
+  font-weight: bold;
+  color: #1d2e38;
+}
+
+.vue-patient-card .right .details {
+  color: #707070;
+}
+
 .login {
   height: 100vh;
   background-color: white;

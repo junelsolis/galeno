@@ -103,3 +103,46 @@ table {
   }
 
 }
+
+.vue-patient-card {
+  border: 1px solid lightgrey;
+  margin: 10px;
+
+
+  .left {
+    background-color: rgba(7,153,146,0.18);
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .icon {
+
+      display: flex;
+      justify-content: center;
+      i {
+
+        color: #1d2e38;
+        font-size: 4.2rem;
+
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  .right {
+    padding: 10px;
+
+    .name {
+      font-weight: bold;
+      color: #1d2e38;
+    }
+
+    .details {
+      color: #707070;
+    }
+  }
+
+}

@@ -24,6 +24,8 @@ window.Vue = require('vue');
 Vue.component('encounter-chief-complaint', require('./components/physician/patient/encounter/ChiefComplaint.vue').default);
 Vue.component('encounter-note', require('./components/physician/patient/encounter/Note.vue').default);
 Vue.component('patient-problem-list', require('./components/physician/patient/encounter/ProblemList.vue').default);
+Vue.component('patients-today', require('./components/physician/PatientsToday.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -32,8 +34,12 @@ Vue.component('patient-problem-list', require('./components/physician/patient/en
  */
 
 const patientChart = new Vue({
-    el: '#patient-chart',
+    el: '#app',
 
+});
+
+const physicianDash = new Vue({
+  el: '#app',
 });
 
 // const patient = new Vue({

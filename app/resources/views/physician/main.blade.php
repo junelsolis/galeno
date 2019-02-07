@@ -14,35 +14,48 @@
       <div class='middle cell medium-6 large-8'>
 
 
-        <div class='dashboard-content'>
+        <div id='app' class='dashboard-content'>
           <div class='section'>
             <div class='header'>
               <span>Patients Today</span>
             </div>
             <div class='content'>
+
               @if ($data['patientsToday']->count() > 0)
-              <div class='table-scroll'>
-                <table  id='patientsTodayTable' class='striped'>
-                  <thead>
-                    <tr>
-                      <th>Patient Name</th>
-                      <th>Details</th>
-                      <th>Chief Complaint</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    @foreach ($data['patientsToday'] as $i)
-                    <tr>
-                      <td>{{ $i->patient['formattedName']['fullname'] }}</td>
-                      <td>{{ $i->patient->details() }}</td>
-                      <td>{{ $i->chief_complaint }}</td>
-                      <td><a href='/physician/patient/{{$i->patient->id}}'><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;See Patient</a></td>
-                    </tr>
-                    @endforeach
-                  </tbody>
-                </table>
-              </div>
+                <div class='grid-x'>
+                  @foreach ($data['patientsToday'] as $i)
+                  <div class='cell medium-4 small-12'>
+                    <div class='vue-patient-card'>
+                      <div class='grid-x'>
+                        <div class='left cell small-3'>
+                          <div class='icon'>
+                            @if ($i->patient->gender == 'M')
+                            <i class="fas fa-male"></i>
+                            @elseif ($i->patient->gender == 'F')
+                            <i class="fas fa-female"></i>
+                            @else
+                            <i class="fas fa-user-circle"></i>
+                            @endif
+                          </div>
+                        </div>
+                        <div class='right cell small-9'>
+                          <div class='name'>
+                            {{ $i->patient['formattedName']['fullname'] }}
+                          </div>
+                          <div class='details'>
+                            {{ $i->patient->details() }}<br />
+                            {{ $i->chief_complaint }}
+                          </div>
+                          <div>
+                            <a href=''><i class="fas fa-chevron-right"></i>&nbsp;See Patient</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  @endforeach
+                </div>
+
               @else
               @endif
             </div>
@@ -203,7 +216,7 @@
 
     </div>
 
-    <script>
+    <script src='/js/includes.js'>
       $(document).foundation();
 
 
@@ -211,7 +224,8 @@
         $('#patientsTodayTable').DataTable();
       });
 
-
+    </script>
+    <script src='/js/app.js'>
 
     </script>
   </body>

@@ -13,7 +13,7 @@
 
       <div class='middle cell medium-6 large-8'>
 
-        <div id='patient-chart' class='patient-content'>
+        <div id='app' class='patient-content'>
           <div class='summary'>
             @if ($data['patient']->gender == 'M')
             <i class="fas fa-male"></i>
