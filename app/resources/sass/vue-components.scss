@@ -5,6 +5,7 @@
 
   -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.1);
   box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
 
   p {
     margin-bottom: 0;
@@ -54,7 +55,9 @@
     flex-direction: column;
     justify-content: center;
 
-    flex-grow: 1;
+    width: 250px;
+
+    // flex-grow: 1;
 
   }
 
@@ -64,6 +67,7 @@
     flex-direction: column;
     justify-content: center;
 
+    width: 90px;
 
   }
 
@@ -116,6 +120,16 @@
       }
     }
 
+  }
+
+  .link:hover {
+    p {
+      a {
+        color: white;
+      }
+    }
+
+    background-color: #1d2e28;
   }
 
 }

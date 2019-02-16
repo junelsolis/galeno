@@ -18,11 +18,11 @@
 
           <div class='grid-x'>
             <div class='cell medium-9'>
-              <patients-today></patients-today>
+              <patients-today :data='@json($data['patientsToday'])'></patients-today>
 
             </div>
             <div class='cell medium-3'>
-              <today-widget></today-widget>
+              <!-- <today-widget></today-widget> -->
             </div>
           </div>
 

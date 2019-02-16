@@ -129,4 +129,10 @@ class Patient extends Model
 
     }
 
+    public function getDetailsAttribute() {
+      return $this->details();
+    }
+
+    protected $appends = ['details','formattedName'];
+
 }

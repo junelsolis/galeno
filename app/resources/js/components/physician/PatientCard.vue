@@ -1,29 +1,29 @@
 <template>
     <div class='patient-card'>
-      <div class='tag'>
+      <div class='tag' style='border-right:none;'>
         <p>
           Patient
         </p>
       </div>
-      <div class='name'>
+      <div class='name' style='border-left:none'>
         <p>
-          Francis Scott Key
+          {{ encounter.patient.formattedName.fullname }}
         </p>
       </div>
       <div class='details'>
         <p>
-          M 35Y
+          {{ encounter.patient.details }}
         </p>
       </div>
       <div class='chief-complaint'>
         <p class='text'>
-          Chest Pain
+          {{ encounter.chief_complaint }}
         </p>
         <p class='label'>
           chief complaint
         </p>
       </div>
-      <div class='reminders'>
+      <div class='reminders' style='border-right:none;'>
         <p class='text'>
           no reminders
         </p>
@@ -31,9 +31,9 @@
           reminders
         </p>
       </div>
-      <div class='link'>
+      <div class='link' style='border-left:none;'>
         <p>
-          <a href=''>See Patient</a>
+          <a href=''><i class="fas fa-eye"></i>&nbsp;Go to Patient</a>
         </p>
       </div>
     </div>
@@ -44,6 +44,11 @@
 <script>
 
   export default {
-
+    props: ['data'],
+    data: function() {
+      return {
+        encounter: this.data,
+      }
+    }
   }
 </script>

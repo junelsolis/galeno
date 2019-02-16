@@ -24,7 +24,8 @@ window.Vue = require('vue');
 Vue.component('encounter-chief-complaint', require('./components/physician/patient/encounter/ChiefComplaint.vue').default);
 Vue.component('encounter-note', require('./components/physician/patient/encounter/Note.vue').default);
 Vue.component('patient-problem-list', require('./components/physician/patient/encounter/ProblemList.vue').default);
-Vue.component('patients-today', require('./components/physician/PatientsToday.vue').default);
+Vue.component('patient-card', require('./components/physician/PatientCard.vue').default);
+Vue.component('patients-today', require('./components/physician/PatientsTodayList.vue').default);
 
 
 /**
@@ -33,12 +34,12 @@ Vue.component('patients-today', require('./components/physician/PatientsToday.vu
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const patientChart = new Vue({
-    el: '#app',
+// const patientChart = new Vue({
+//     el: '#app',
+//
+// });
 
-});
-
-const physicianDash = new Vue({
+const app = new Vue({
   el: '#app',
 });
 
