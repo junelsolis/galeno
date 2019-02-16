@@ -1770,6 +1770,42 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -2514,7 +2550,43 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h1", [_vm._v("Test")])])
+    return _c("div", { staticClass: "patient-card" }, [
+      _c("div", { staticClass: "tag" }, [
+        _c("p", [_vm._v("\n        Patient\n      ")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "name" }, [
+        _c("p", [_vm._v("\n        Francis Scott Key\n      ")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "details" }, [
+        _c("p", [_vm._v("\n        M 35Y\n      ")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "chief-complaint" }, [
+        _c("p", { staticClass: "text" }, [
+          _vm._v("\n        Chest Pain\n      ")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "label" }, [
+          _vm._v("\n        chief complaint\n      ")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "reminders" }, [
+        _c("p", { staticClass: "text" }, [
+          _vm._v("\n        no reminders\n      ")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "label" }, [
+          _vm._v("\n        reminders\n      ")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "link" }, [
+        _c("p", [_c("a", { attrs: { href: "" } }, [_vm._v("See Patient")])])
+      ])
+    ])
   }
 ]
 render._withStripped = true

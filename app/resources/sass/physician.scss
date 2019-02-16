@@ -1,39 +1,38 @@
 .physician {
 
-  // dark green
-  // background-color: #1d2e38;
 
-  // green
-  // background-color: #079992;
-
-
-  background-color: white;
+  min-height: 100vh;
+  background-color: #E2E5E5;
 
 
   .top-bar {
 
     padding: 0;
-    position: sticky;
-    position: -webkit-sticky;
-    top:0;
+    // position: sticky;
+    // position: -webkit-sticky;
+    // top:0;
+
+    background-color: white;
+
 
     z-index: 500;
 
 
     .logo {
       padding: 7px 10px 7px 10px;
+      background-color: #F5F4F4;
     }
 
     .search-bar {
       // background-color: #e8e8e8;
       background-color: white;
       border-bottom: #e8e8e8 solid 1px;
-      min-height: 45px;
+      min-height: 40px;
       z-index: 500;
 
-      position: sticky;
-      position: -webkit-sticky;
-      top:0;
+      // position: sticky;
+      // position: -webkit-sticky;
+      // top:0;
 
       display: flex;
       align-items: center;
@@ -47,10 +46,14 @@
 
     .user-details {
       // color: #079992;
-      color: #96C6C3;
-      background-color: #1d2e38;
-      min-height: 45px;
+      color: #079992;
+      // background-color: #1d2e38;
+      background-color: white;
+      min-height: 40px;
       padding-right: 20px;
+
+      border-bottom: #e8e8e8 solid 1px;
+
 
       display: flex;
       align-items: center;
@@ -80,7 +83,9 @@
 
   .menu {
 
+    min-height: 100vh;
     background-color: #1d2e38;
+
 
 
     display: flex;
@@ -154,37 +159,15 @@
     }
   }
 
+  .dashboard-content {
+    // padding: 40px 30px 50px 30px;
+    padding: 20px;
+  }
+
   .middle {
 
 
-    .dashboard-content {
-      padding: 40px 30px 50px 30px;
 
-      .section {
-        margin-bottom: 30px;
-        .header {
-          span {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #079992;
-          }
-
-          border-bottom: lightgrey solid 1px;
-        }
-
-        .content {
-          margin-top: 10px;
-
-          table {
-            .button {
-              margin-bottom: 0;
-            }
-          }
-        }
-
-
-      }
-    }
 
     .patient-content {
       .summary {

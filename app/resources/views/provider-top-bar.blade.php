@@ -1,5 +1,5 @@
 <div class='top-bar grid-x'>
-  <div class='cell medium-3 large-2'>
+  <div class='cell medium-3 large-2' style='background-color: #f5f4f4;'>
     <div class='logo'>
       <img src='/images/medicoffice-logo.png' />
     </div>
