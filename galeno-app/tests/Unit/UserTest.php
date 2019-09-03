@@ -34,9 +34,26 @@ class UserTest extends TestCase
 
       $user = CreateUser::withRole('admin');
 
-      $user->roles()->sync([CreateUser::role('nurse')->id, CreateUser::role('admin')->id]);
+      $user->roles()->attach(CreateUser::role('nurse')->id);
 
       $this->assertTrue($user->roles->count() == 2);
+
+    }
+
+
+    /** @test */
+    public function a_user_can_have_assigned_patients() {
+
+
+      $user = CreateUser::withRole('physician');
+
+      $patients = factory('App\Patient', 3)->create();
+
+      foreach ($patients as $patient) {
+        $patient->assign($user);
+      }
+
+      $this->assertTrue($user->patients->count() == 3);
 
     }
 }

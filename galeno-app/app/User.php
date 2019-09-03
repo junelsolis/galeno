@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Notifications\Notifiable;
 use App\Role;
+use App\Patient;
 
 
 class User extends Authenticatable
@@ -48,6 +49,11 @@ class User extends Authenticatable
     public function roles()
     {
       return $this->belongsToMany('App\Role');
+    }
+
+
+    public function patients() {
+      return $this->belongsToMany('App\Patient');
     }
 
 
