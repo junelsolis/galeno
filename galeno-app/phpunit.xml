@@ -3,6 +3,7 @@
          backupStaticAttributes="false"
          bootstrap="tests/bootstrap.php"
          colors="true"
+         printerClass="Sempro\PHPUnitPrettyPrinter\PrettyPrinter"
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
