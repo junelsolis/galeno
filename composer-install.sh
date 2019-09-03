@@ -1,5 +1,5 @@
 #!/bin/bash
 
 docker run --rm --interactive --tty \
-    --volume $PWD/medicoffice-app:/app \
+    --volume $PWD/galeno-app:/app \
     composer install --ignore-platform-reqs --no-scripts
