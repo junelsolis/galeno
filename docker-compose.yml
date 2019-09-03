@@ -34,8 +34,8 @@ services:
       MYSQL_DATABASE: galeno
     secrets:
       - db_root_password
-    # ports:
-    #   - "127.0.0.1:3320:3306"
+    ports:
+      - "127.0.0.1:3322:3306"
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
