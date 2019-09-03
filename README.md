@@ -1,4 +1,4 @@
-<img src='https://github.com/junelsolis/medicoffice/blob/master/medicoffice-logo.png' width='400'>
+<img src='https://github.com/junelsolis/medicoffice/blob/master/galeno-logo.svg' width='400'>
 
 ![](https://img.shields.io/github/license/junelsolis/medicoffice.svg)
 ![](https://img.shields.io/github/last-commit/junelsolis/medicoffice.svg)
