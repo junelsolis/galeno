@@ -1,16 +1,8 @@
 #!/bin/bash
 
-# create environment file
-cd medicoffice-app
-cp .env.example .env
-cd ..
 
-# create secrets files
-mkdir secrets
-cd secrets
 
-openssl rand -base64 35 | tee db_root_password
-cd ..
+
 
 # bring up the containers
 docker-compose up -d
@@ -21,5 +13,15 @@ docker-compose up -d
 # generate application key
 docker-compose exec php php artisan key:generate
 
+
 # chown the web files
 docker-compose exec php chown -R www-data:www-data /var/www/html
+
+# install npm modules
+cd medicoffice-app
+npm install
+npm run production
+
+# migrate db
+docker-compose exec php php artisan migrate
+docker-compose exec php php artisan optimize
