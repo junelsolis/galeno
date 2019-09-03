@@ -13,7 +13,7 @@ Since the project reboot, the demo site has been taken down. Once I have more of
 1. Clone this repository
 1. cd to the project directory
 1. Run demo setup script: `./demo-setup.sh`
-1. Copy `secrets/db_root_password` contents to `DB_PASSWORD` in the `app\.env` file.
+1. Copy `secrets/db_root_password` contents to `DB_PASSWORD` in the `galeno-app\.env` file.
 1. Run database migration: `docker-compose exec php php artisan migrate --seed`
 
 
@@ -24,6 +24,6 @@ Since the project reboot, the demo site has been taken down. Once I have more of
 1. Clone this repository.
 1. cd to the downloaded project directory.
 1. Create database secret: `mkdir secrets`, then `openssl rand -base64 32 > secrets\db_root_password`
-1. Create environment file: `cp app\.env.example app\.env` and edit to match your environment.
+1. Create environment file: `cp galeno-app\.env.example galeno-app\.env` and edit to match your environment.
 1. Run `docker-compose up -d`
 1. Generate app key and run database migration: `docker-compose exec php bash`, `php artisan key:generate`, `php artisan migrate`
