@@ -5,10 +5,10 @@ services:
 
   web:
     image: nginx
-    container_name: medicoffice-nginx
+    container_name: galeno-nginx
     restart: always
     volumes:
-      - "./app:/var/www/html"
+      - "./galeno-app:/var/www/html"
       - "./nginx:/etc/nginx/"
     ports:
       - "9300:80"
@@ -16,22 +16,22 @@ services:
 
   php:
     #image: php:7.2-fpm
-    container_name: medicoffice-php
+    container_name: galeno-php
     build:
       context: ./
       dockerfile: php.dockerfile
     volumes:
-      - "./app:/var/www/html"
+      - "./galeno-app:/var/www/html"
 
   mariadb:
     image: mariadb
-    container_name: medicoffice-db
+    container_name: galeno-db
     restart: always
     volumes:
-      - medicoffice-db-vol:/var/lib/mysql
+      - galeno-db-vol:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
-      MYSQL_DATABASE: medicoffice
+      MYSQL_DATABASE: galeno
     secrets:
       - db_root_password
     # ports:
@@ -39,10 +39,10 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: medicoffice-pma
+    container_name: galeno-pma
     restart: always
     environment:
-      - PMA_HOST=medicoffice-db
+      - PMA_HOST=galeno-db
     ports:
       - "127.0.0.1:9301:80"
 
@@ -53,4 +53,4 @@ secrets:
 
 
 volumes:
-  medicoffice-db-vol:
+  galeno-db-vol:
