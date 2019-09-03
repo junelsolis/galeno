@@ -51,9 +51,4 @@ class User extends Authenticatable
     }
 
 
-
-    public function assignRole(Role $role)
-    {
-
-    }
 }
