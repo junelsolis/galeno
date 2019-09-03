@@ -1,3 +1,4 @@
 secrets/
 db/
 .remote-sync.json
+.DS_Store
