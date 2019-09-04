@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::get('/', 'LoginController@main')->middleware('guest');
+Route::post('login', 'LoginController@login');
+
+Route::get('reset-password', 'LoginController@showResetPassword');
+Route::post('reset-password', 'LoginController@processResetPassword');
+Route::get('check-email-password-reset', 'LoginController@showCheckEmailReset');
+
+Route::get('app')->middleware('auth');
+
+Route::middleware('auth')->group(function() {
+  Route::get('app/switcher', function() { return view('switcher');});
+  Route::get('app/nurse',  function() { return view('nurse.main');});
 });

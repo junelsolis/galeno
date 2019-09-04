@@ -48,13 +48,18 @@ class User extends Authenticatable
      */
     public function roles()
     {
-      return $this->belongsToMany('App\Role');
+        return $this->belongsToMany('App\Role');
     }
 
 
     public function patients() {
-      return $this->belongsToMany('App\Patient');
+        return $this->belongsToMany('App\Patient');
     }
+
+    // public function sendPasswordResetNotification($token)
+    // {
+    //     $this->notify(new ResetPasswordNotification($token));
+    // }
 
 
 }

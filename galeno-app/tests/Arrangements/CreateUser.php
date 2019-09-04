@@ -5,6 +5,7 @@ namespace Tests\Arrangements;
 use Tests\TestCase;
 use App\User;
 use App\Role;
+use Hash;
 
 
 class CreateUser
@@ -31,11 +32,11 @@ class CreateUser
 
   }
 
-  public function withRoles($roles)
+  public function withRoles($roles = null)
   {
 
     if (is_string($roles)) {
-      
+
       $this->user->roles()->attach($this->{$roles}->id);
 
     }
@@ -44,7 +45,18 @@ class CreateUser
 
       foreach ($roles as $role) {
         $this->user->roles()->attach($this->{$role}->id);
+
       }
+    }
+
+    if (empty($roles)) {
+
+      $roles = ['physician', 'nurse', 'staff', 'admin'];
+
+      $role = $roles[array_rand($roles)];
+
+      $this->user->roles()->attach($this->{$role}->id);
+
     }
 
 
@@ -59,8 +71,13 @@ class CreateUser
     $this->user->password = Hash::make($password);
     $this->user->save();
 
-    return $this->user;
+
+
+
+    return $this;
   }
+
+
 
 
   public function role(String $role = null)
