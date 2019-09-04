@@ -31,13 +31,35 @@ class CreateUser
 
   }
 
-  public function withRole(String $role = null)
+  public function withRoles($roles)
   {
 
-    $this->user->roles()->sync($this->{$role});
+    if (is_string($roles)) {
+      
+      $this->user->roles()->attach($this->{$roles}->id);
+
+    }
+
+    if (is_array($roles)) {
+
+      foreach ($roles as $role) {
+        $this->user->roles()->attach($this->{$role}->id);
+      }
+    }
+
+
 
     return $this->user;
 
+  }
+
+
+  public function withPassword(String $password)
+  {
+    $this->user->password = Hash::make($password);
+    $this->user->save();
+
+    return $this->user;
   }
 
 

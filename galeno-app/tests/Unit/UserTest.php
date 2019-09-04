@@ -17,11 +17,7 @@ class UserTest extends TestCase
     /** @test */
     public function a_user_has_roles() {
 
-      $user = CreateUser::withRole('nurse');
-
-
-      $user->roles()->sync(CreateUser::role('nurse')->id);
-
+      $user = CreateUser::withRoles('nurse');
 
       $this->assertTrue($user->roles->first()->name == 'nurse');
 
@@ -32,9 +28,8 @@ class UserTest extends TestCase
     public function a_user_can_have_multiple_roles() {
 
 
-      $user = CreateUser::withRole('admin');
+      $user = CreateUser::withRoles(['admin','nurse']);
 
-      $user->roles()->attach(CreateUser::role('nurse')->id);
 
       $this->assertTrue($user->roles->count() == 2);
 
@@ -45,7 +40,7 @@ class UserTest extends TestCase
     public function a_user_can_have_assigned_patients() {
 
 
-      $user = CreateUser::withRole('physician');
+      $user = CreateUser::withRoles('physician');
 
       $patients = factory('App\Patient', 3)->create();
 
