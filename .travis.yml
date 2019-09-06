@@ -6,8 +6,8 @@ php:
 addons:
 mariadb: '10.4'
 
+before_install: cd galeno-app
 before_script:
-  - cd galeno-app
   - cp .env.travis .env
   - composer install --no-interaction
   - php artisan key:generate
