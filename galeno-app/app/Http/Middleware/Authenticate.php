@@ -18,8 +18,13 @@ class Authenticate
     public function handle($request, Closure $next)
     {
 
+
+        if (! Auth::check()) {
+          return redirect('/');
+        }
+
         $user = Auth::user();
-        
+
         if ($user->roles->count() > 1) {
           return redirect('app/switcher');
         }

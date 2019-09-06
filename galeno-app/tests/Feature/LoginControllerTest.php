@@ -21,7 +21,11 @@ class LoginControllerTest extends TestCase
 
         $this->get('/')
               ->assertStatus(200)
-              ->assertViewIs('main');
+              ->assertViewIs('main')
+              ->assertSee('Galeno');
+
+        $this->get('/app/nurse')
+              ->assertRedirect('/');
 
     }
 

@@ -5,6 +5,6 @@
     <title></title>
   </head>
   <body>
-    main view
+    Galeno
   </body>
 </html>
