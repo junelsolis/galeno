@@ -6,7 +6,9 @@ php:
 addons:
 mariadb: '10.4'
 
-before_install: cd galeno-app
+before_install:
+  - cd galeno-app
+  - mysql -e 'CREATE DATABASE galeno;'
 before_script:
   - cp .env.travis .env
   - composer install --no-interaction
