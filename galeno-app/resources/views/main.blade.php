@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    Galeno
-  </body>
-</html>
+@extends('layouts.center-field')
+
+@section('title', 'Login')
+
+@section('content')
+<main class='w-full md:w-1/2 mx-auto flex items-center justify-center'>
+  @include('header')
+</main>
+@endsection
