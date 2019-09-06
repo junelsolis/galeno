@@ -4,12 +4,15 @@ php:
   - 7.2
 
 addons:
-mariadb: '10.4'
+  mariadb: '10.4'
 
 cache:
   directories:
     - vendor
     - node_modules
+
+services:
+  - mysql
 
 before_install:
   - cd galeno-app
