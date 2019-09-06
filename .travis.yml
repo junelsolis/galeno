@@ -3,6 +3,9 @@ language: php
 php:
   - 7.2
 
+addons:
+mariadb: '10.4'
+
 before_script:
   - cd galeno-app
   - cp .env.travis .env
