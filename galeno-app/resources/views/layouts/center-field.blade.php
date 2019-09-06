@@ -6,7 +6,7 @@
     <title>Galeno &mdash; @yield('title')</title>
   </head>
   <body class='bg-grey-600'>
-    <div class='min-h-screen bg-grey-100 flex flex-col items-center justify-center'>
+    <div id='app' class='min-h-screen bg-grey-100 flex flex-col items-center justify-center'>
       <div class='container mx-auto flex-grow flex items-center justify-center'>
         @yield('content')
       </div>
@@ -17,12 +17,10 @@
             Galeno &mdash; Simple Patient Charts<br />
             <a class='text-blue-100' href='https://www.github.com/junelsolis.galeno' target='_blank'>github page</a>
           </p>
-          <!-- <p class='text-xs text-right'>
-            Created by
-            Junel Solis MD
-          </p> -->
         </div>
       </footer>
     </div>
+
+    <script src='js/app.js'></script>
   </body>
 </html>
