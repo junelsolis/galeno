@@ -16,7 +16,7 @@ before_install:
 
 before_script:
   - cp .env.travis .env
-  - sudo mysql -e 'CREATE DATABASE galeno;'
+  - sudo mysql -e 'CREATE DATABASE galeno-testing;'
   - composer self-update
   - composer install --no-interaction
   - php artisan key:generate
