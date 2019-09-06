@@ -19,7 +19,26 @@ class UserTest extends TestCase
 
       $user = CreateUser::withRoles('nurse');
 
-      $this->assertTrue($user->roles->first()->name == 'nurse');
+      $this->assertTrue($user->hasRole('nurse'));
+
+    }
+
+
+    /** @test */
+    public function a_user_can_be_assigned_a_role() {
+
+      $user = CreateUser::create();
+
+      $user->assignRole('staff');
+
+      $this->assertTrue($user->roles->count() == 1);
+
+
+      $user->assignRole('nurse');
+
+      $user->refresh();
+
+      $this->assertTrue($user->roles->count() == 2);
 
     }
 
@@ -27,11 +46,12 @@ class UserTest extends TestCase
     /** @test */
     public function a_user_can_have_multiple_roles() {
 
-
+      $this->withoutExceptionHandling();
       $user = CreateUser::withRoles(['admin','nurse']);
 
 
       $this->assertTrue($user->roles->count() == 2);
+
 
     }
 

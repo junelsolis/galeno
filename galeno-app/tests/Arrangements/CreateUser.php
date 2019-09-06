@@ -21,12 +21,24 @@ class CreateUser
   public function __construct()
   {
 
-    $this->user = factory('App\User')->create();
+    $this->user = factory('App\User')->create(['active' => 1]);
 
-    $this->physician = Role::updateOrCreate(['name' => 'physician']);
-    $this->nurse = Role::updateOrCreate(['name' => 'nurse']);
-    $this->staff = Role::updateOrCreate(['name' => 'staff']);
-    $this->admin = Role::updateOrCreate(['name' => 'admin']);
+    if (Role::where('name', 'physician')->count() == 0) {
+      Role::create(['name' => 'physician']);
+    }
+
+    if (Role::where('name', 'nurse')->count() == 0) {
+      Role::create(['name' => 'nurse']);
+    }
+
+    if (Role::where('name', 'staff')->count() == 0) {
+      Role::create(['name' => 'staff']);
+    }
+
+    if (Role::where('name', 'admin')->count() == 0) {
+      Role::create(['name' => 'admin']);
+    }
+
 
     return $this;
 
@@ -37,25 +49,26 @@ class CreateUser
 
     if (is_string($roles)) {
 
-      $this->user->roles()->attach($this->{$roles}->id);
+      $this->user->assignRole($roles);
 
     }
 
     if (is_array($roles)) {
 
       foreach ($roles as $role) {
-        $this->user->roles()->attach($this->{$role}->id);
+
+        $this->user->assignRole($role);
 
       }
     }
 
     if (empty($roles)) {
 
-      $roles = ['physician', 'nurse', 'staff', 'admin'];
-
-      $role = $roles[array_rand($roles)];
-
-      $this->user->roles()->attach($this->{$role}->id);
+      // $roles = ['physician', 'nurse', 'staff', 'admin'];
+      //
+      // $role = $roles[array_rand($roles)];
+      //
+      // $this->user->roles->attach($this->{$role}->id);
 
     }
 
@@ -78,14 +91,22 @@ class CreateUser
   }
 
 
-
-
-  public function role(String $role = null)
+  public function create()
   {
 
-    return $this->{$role};
+      return $this->user;
 
   }
+
+
+
+
+  // public function role(String $role = null)
+  // {
+  //
+  //   return $this->{$role};
+  //
+  // }
 
 
 

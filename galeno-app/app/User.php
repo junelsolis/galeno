@@ -51,6 +51,33 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Role');
     }
 
+    public function assignRole($name)
+    {
+
+        $role = Role::where('name', $name)->first();
+
+        $this->roles()->syncWithoutDetaching($role->id);
+
+        return $this;
+
+    }
+
+
+    public function hasRole($name)
+    {
+
+        $roles = $this->roles;
+
+        foreach ($roles as $role) {
+
+          if ($role->name == $name) return true;
+
+          else return false;
+
+        }
+
+    }
+
 
     public function patients() {
         return $this->belongsToMany('App\Patient');
