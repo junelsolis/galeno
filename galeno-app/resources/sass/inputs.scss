@@ -1,0 +1,41 @@
+.standard-button {
+  @apply px-6 py-2 text-xs text-white bg-blue-100 shadow rounded;
+  transition-duration: 0.35s;
+
+}
+
+.standard-button:hover {
+  @apply bg-blue-200 shadow-md;
+  transform: translate(-0.08rem, -0.05rem);
+  transition-duration: 0.35s;
+
+}
+
+.standard-button:focus {
+  outline: none;
+}
+
+.input-group {
+
+  input:not(:last-child) {
+    @apply mb-2;
+  }
+
+  input {
+    @apply px-3 py-2  rounded shadow text-sm text-grey-400 w-full;
+    overflow: visible !important;
+    transition-duration: 0.35s;
+  }
+
+  input:focus {
+    outline: none;
+    @apply shadow-md border-l-4 border-blue-100;
+    transform: translate(-0.08rem, -0.05rem);
+    transition-duration: 0.35s;
+  }
+
+  input::placeholder {
+    @apply text-xs text-grey-200;
+  }
+
+}
