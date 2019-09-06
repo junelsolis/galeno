@@ -6,14 +6,21 @@ php:
 addons:
 mariadb: '10.4'
 
-before_install:
-  - cd galeno-app
-before_script:
-  - cp .env.travis .env
-  - composer install --no-interaction
-  - php artisan key:generate
-  - php artisan migrate
-
 cache:
   directories:
     - vendor
+    - node_modules
+
+before_install:
+  - cd galeno-app
+
+before_script:
+  - cp .env.travis .env
+  - sudo mysql -e 'CREATE DATABASE galeno;'
+  - composer self-update
+  - composer install --no-interaction
+  - php artisan key:generate
+  - php artisan migrate --no-interaction -vvv
+
+script:
+  - vendor/bin/phpunit
