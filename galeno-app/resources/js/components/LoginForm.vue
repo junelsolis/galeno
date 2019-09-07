@@ -7,7 +7,13 @@
     </div>
 
     <div class='mt-4 text-center'>
-      <button class='standard-button'>Login</button>
+      <bar-loader v-if='loading' class='mx-auto mt-2' color="#176AA6" :size="20"></bar-loader>
+      <div class='rounded bg-white p-3 mb-4 flex items-center justify-center' v-if="message != ''">
+        <p class='text-red-100 text-xs'>
+          {{ message }}
+        </p>
+      </div>
+      <button class='standard-button' v-if='!loading' @click='submit'>Login</button>
     </div>
 
 
@@ -19,9 +25,6 @@
 
   .login-form {
 
-    
-
-
 
   }
 
@@ -31,9 +34,56 @@
 
 <script>
 
+    const axios = window.axios
+
     export default {
 
+      data() {
 
+        return {
+          email: '',
+          password: '',
+
+          loading: false,
+          message: '',
+        }
+
+      },
+
+      methods: {
+        submit() {
+
+          this.message = ''
+          this.loading = false
+
+          if (this.email == '' || this.password == '') {
+
+            this.message = 'Please fill in the required fields.'
+            return
+
+          }
+
+          this.loading = true
+
+          axios.post('/login', {
+            email: this.email,
+            password: this.password
+          }).then(response => {
+
+              if (response.data.status == 'OK') {
+                window.location.href = '/app'
+              }
+
+              else {
+                this.loading = false,
+                this.message = response.data.message
+              }
+
+          })
+
+        }
+
+      }
 
     }
 
