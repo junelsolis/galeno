@@ -30,17 +30,13 @@ class LoginController extends Controller
         if (Auth::check()) {
             $user = Auth::user();
 
-                return $request->expectsJson()
+            return $request->expectsJson()
                           ? response()->json(['status' => 'OK', 'message' => 'Login successful.'])
                           : redirect('/app');
-
         } else {
-
             return $request->expectsJson()
                       ? response()->json(['status' => 'Error', 'message' => 'Sorry, invalid credentials.'])
                       : back()->with(['status' => 'Error', 'message' => 'Sorry, invalid credentials.']);
-
-
         }
     }
 

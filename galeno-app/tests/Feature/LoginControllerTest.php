@@ -36,7 +36,7 @@ class LoginControllerTest extends TestCase
 
         $this->json('POST', '/login', $att)
               ->assertStatus(200)
-              ->assertJson(['status' => 'OK', 'message' => 'Login successful.' ]);
+              ->assertJson(['status' => 'OK', 'message' => 'Login successful.']);
     }
 
     /** @test */
