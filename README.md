@@ -5,7 +5,7 @@
 Some medical practices are under-equipped when it comes to maintaining patient records. Many still rely on paper to keep track of their patients. This web application aims to solve that problem in the simple, easy-to-use, and open-source way.
 
 ### Demo Site
-Since the project reboot, the demo site has been taken down. Once I have more of a frontend done, I will create a new demo site. This will happen after I'm done building some unit and feature tests.
+Since the project reboot, the demo site has been taken down. Once there is enough content for a frontend, a new demo site will be made available online.
 
 ### How to run the demo on your own server/computer
 1. Clone this repository
