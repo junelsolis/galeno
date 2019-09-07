@@ -21,15 +21,6 @@ class Authenticate
             return redirect('/');
         }
 
-        $user = Auth::user();
-
-        if ($user->roles->count() > 1) {
-            return redirect('app/switcher');
-        } else {
-            $roleName = $user->roles->first()->name;
-
-            return redirect('app/'.$roleName);
-        }
 
         return $next($request);
     }
