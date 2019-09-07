@@ -21,7 +21,6 @@ class Authenticate
             return redirect('/');
         }
 
-
         return $next($request);
     }
 }
