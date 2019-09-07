@@ -16,9 +16,9 @@ class CheckForMultirole
      */
     public function handle($request, Closure $next)
     {
-        if (!Auth::check()) {
-            return redirect('/');
-        }
+        // if (!Auth::check()) {
+        //     return redirect('/');
+        // }
 
         $user = Auth::user();
 

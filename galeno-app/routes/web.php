@@ -18,9 +18,14 @@ Route::get('reset-password', 'LoginController@showResetPassword');
 Route::post('reset-password', 'LoginController@processResetPassword');
 Route::get('check-email-password-reset', 'LoginController@showCheckEmailReset');
 
-Route::get('app')->middleware('auth');
+// Route::get('app')->middleware('auth');
 
-Route::middleware(['auth', 'multirole'])->group(function () {
+Route::get('app')->middleware(['auth','multirole']);
+
+Route::middleware(['auth'])->group(function () {
+
+    Route::get('app');
+
     Route::get('app/switcher', function () {
         return view('switcher');
     });

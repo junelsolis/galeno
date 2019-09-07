@@ -30,18 +30,17 @@ class LoginController extends Controller
         if (Auth::check()) {
             $user = Auth::user();
 
-            if ($user->roles->count() > 1) {
-                return redirect('app/switcher');
-            } else {
-                $roleName = $user->roles->first()->name;
+                return $request->expectsJson()
+                          ? response()->json(['status' => 'OK', 'message' => 'Login successful.'])
+                          : redirect('/app');
 
-                return redirect('app/'.$roleName);
-            }
         } else {
-            return back()->with([
-            'status'  => 'Error',
-            'message' => 'Sorry, invalid credentials.',
-          ]);
+
+            return $request->expectsJson()
+                      ? response()->json(['status' => 'Error', 'message' => 'Sorry, invalid credentials.'])
+                      : back()->with(['status' => 'Error', 'message' => 'Sorry, invalid credentials.']);
+
+
         }
     }
 
