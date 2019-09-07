@@ -3,12 +3,7 @@
 namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Contracts\Auth\CanResetPassword;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Notifications\Notifiable;
-use App\Role;
-use App\Patient;
-
 
 class User extends Authenticatable
 {
@@ -20,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'phone', 'password'
+        'name', 'email', 'phone', 'password',
     ];
 
     /**
@@ -41,9 +36,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
     /**
-     * [roles description]
+     * [roles description].
+     *
      * @return [type] [description]
      */
     public function roles()
@@ -53,33 +48,28 @@ class User extends Authenticatable
 
     public function assignRole($name)
     {
-
         $role = Role::where('name', $name)->first();
 
         $this->roles()->syncWithoutDetaching($role->id);
 
         return $this;
-
     }
-
 
     public function hasRole($name)
     {
-
         $roles = $this->roles;
 
         foreach ($roles as $role) {
-
-          if ($role->name == $name) return true;
-
-          else return false;
-
+            if ($role->name == $name) {
+                return true;
+            } else {
+                return false;
+            }
         }
-
     }
 
-
-    public function patients() {
+    public function patients()
+    {
         return $this->belongsToMany('App\Patient');
     }
 
@@ -87,6 +77,4 @@ class User extends Authenticatable
     // {
     //     $this->notify(new ResetPasswordNotification($token));
     // }
-
-
 }
