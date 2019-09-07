@@ -1,6 +1,6 @@
 <img src='https://github.com/junelsolis/medicoffice/blob/master/galeno-logo.svg' width='300'>
 
-![](https://img.shields.io/github/languages/top/junelsolis/galeno) ![](https://img.shields.io/travis/junelsolis/galeno) [![StyleCI](https://github.styleci.io/repos/164389688/shield?branch=master)](https://github.styleci.io/repos/164389688)
+![](https://img.shields.io/github/languages/top/junelsolis/galeno?style=flat-square) ![](https://img.shields.io/travis/junelsolis/galeno?label=TravisCI&style=flat-square) [![StyleCI](https://github.styleci.io/repos/164389688/shield?branch=master)](https://github.styleci.io/repos/164389688)
 
 Some medical practices are under-equipped when it comes to maintaining patient records. Many still rely on paper to keep track of their patients. This web application aims to solve that problem in the simple, easy-to-use, and open-source way.
 
