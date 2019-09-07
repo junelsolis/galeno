@@ -11,6 +11,12 @@ Vue.component('login-form', require('./components/LoginForm.vue').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+ import { VueSpinners } from '@saeris/vue-spinners'
+
+ Vue.use(VueSpinners)
+
+
+
 const app = new Vue({
     el: '#app',
 });
