@@ -2,41 +2,33 @@
 
 namespace App\Http\Middleware;
 
-use Closure;
 use Auth;
-use App\Role;
+use Closure;
 
 class Authenticate
 {
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     *
      * @return mixed
      */
     public function handle($request, Closure $next)
     {
-
-
-        if (! Auth::check()) {
-          return redirect('/');
+        if (!Auth::check()) {
+            return redirect('/');
         }
 
         $user = Auth::user();
 
         if ($user->roles->count() > 1) {
-          return redirect('app/switcher');
-        }
+            return redirect('app/switcher');
+        } else {
+            $roleName = $user->roles->first()->name;
 
-        else {
-
-          $roleName = $user->roles->first()->name;
-
-          return redirect('app/' . $roleName);
-
-
-
+            return redirect('app/'.$roleName);
         }
 
         return $next($request);
