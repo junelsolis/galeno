@@ -5,23 +5,19 @@
 Some medical practices are under-equipped when it comes to maintaining patient records. Many still rely on paper to keep track of their patients. This web application aims to solve that problem in the simple, easy-to-use, and open-source way.
 
 ### Demo Site
-Since the project reboot, the demo site has been taken down. Once there is enough content for a frontend, a new demo site will be made available online.
+I have taken down the demo site temporarily as I clean up the code and create better unit and feature tests. Once there is enough content for a frontend, a new demo site will be made available online.
 
-### How to run the demo on your own server/computer
+##### How to run the demo on your computer
 1. Clone this repository
-1. cd to the project directory
-1. Run demo setup script: `./demo-setup.sh`
-1. Copy `secrets/db_root_password` contents to `DB_PASSWORD` in the `galeno-app\.env` file.
-1. Run database migration: `docker-compose exec php php artisan migrate --seed`
+1. Switch to the project directory `cd galeno`
+1. Run the setup script: `./setup.sh`
+1. Once the script is finished running, the application will be accessible on `http://localhost:9300`
 
+##### System Requirements
+* [Docker Engine](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+* [Docker Compose](https://docs.docker.com/compose/install/)
+* [Node Package Manager](https://www.npmjs.com/get-npm)
 
-### System Requirements
-* Docker & Docker Compose
-
-### Basic installation steps
-1. Clone this repository.
-1. cd to the downloaded project directory.
-1. Create database secret: `mkdir secrets`, then `openssl rand -base64 32 > secrets\db_root_password`
-1. Create environment file: `cp galeno-app\.env.example galeno-app\.env` and edit to match your environment.
-1. Run `docker-compose up -d`
-1. Generate app key and run database migration: `docker-compose exec php bash`, `php artisan key:generate`, `php artisan migrate`
+##### Expected Deployment Configuration
+- NGINX reverse proxy handles SSL termination
+- Application containers listening on localhost
