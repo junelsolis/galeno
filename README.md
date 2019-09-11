@@ -10,7 +10,7 @@ I have taken down the demo site temporarily as I clean up the code and create be
 ##### How to run the demo on your computer
 1. Clone this repository
 1. Switch to the project directory `cd galeno`
-1. Run the setup script: `./setup.sh`
+1. Run `./setup.sh`
 1. Once the script is finished running, the application will be accessible on `http://localhost:9300`
 
 ##### System Requirements
