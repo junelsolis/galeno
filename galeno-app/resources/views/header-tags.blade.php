@@ -12,7 +12,7 @@
 <meta property='og:image' content='/images/logo.png' />
 <!-- <meta property='og:description' content='' /> -->
 <link rel='stylesheet' href='/css/app.css' />
-<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <script>
     window.Laravel = <?php echo json_encode([
         'csrfToken' => csrf_token(),

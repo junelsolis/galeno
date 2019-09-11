@@ -13,9 +13,14 @@
           {{ message }}
         </p>
       </div>
-      <button class='standard-button' v-if='!loading' @click='submit'>Login</button>
+      <button class='standard-button' v-if='!loading' @click='submit'><i class="fas fa-key mr-1"></i>Login</button>
     </div>
 
+
+    <div class='link-block'>
+      <a href=''>[ Forgot Password ]</a>
+      <a href=''>[ About ]</a>
+    </div>
 
   </div>
 
@@ -25,6 +30,19 @@
 
   .login-form {
 
+    .link-block {
+      @apply mt-8 text-center flex items-center justify-center;
+
+      a {
+        @apply mx-2 text-xs;
+        transition-duration: 0.3s;
+      }
+
+      a:hover {
+        @apply text-blue-100;
+        transition-duration: 0.3s;
+      }
+    }
 
   }
 
