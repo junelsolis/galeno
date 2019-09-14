@@ -15,6 +15,10 @@ html {
     }
 
 
+    input:focus, button:focus, select:focus, textarea:focus {
+      outline: none;
+    }
+
   }
 }
 
