@@ -58,6 +58,19 @@ class LoginControllerTest extends TestCase
     }
 
     /** @test */
+    public function a_signed_in_user_may_logout()
+    {
+
+        $user = $this->staff();
+
+        $this->actingAs($user)->get('/app/logout')
+              ->assertStatus(302)
+              ->assertRedirect('/');
+        $this->assertGuest();
+
+    }
+
+    /** @test */
     public function it_shows_a_reset_password_page()
     {
         $this->get('reset-password')
@@ -65,5 +78,5 @@ class LoginControllerTest extends TestCase
             ->assertSee('Reset Password');
     }
 
-  
+
 }

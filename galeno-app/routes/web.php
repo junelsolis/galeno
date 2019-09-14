@@ -35,4 +35,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('app/staff', function() {
         return view('staff.main');
     });
+
+    Route::get('app/logout', 'LoginController@logout');
 });
