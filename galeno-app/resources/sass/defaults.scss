@@ -21,7 +21,7 @@ html {
 
 .sidebar {
   @apply bg-white rounded h-full p-4;
-  -webkit-box-shadow:0px 0px 25px 10px #ececec ;
-  -moz-box-shadow:0px 0px 25px 10px #ececec ;
-  box-shadow:0px 0px 25px 10px #ececec ;
+  -webkit-box-shadow:0px 0px 25px 10px rgba(0,0,0,0.08) ;
+  -moz-box-shadow:0px 0px 25px 10px rgba(0,0,0,0.08) ;
+  box-shadow:0px 0px 25px 10px rgba(0,0,0,0.08) ;
 }
