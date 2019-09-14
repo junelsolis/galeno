@@ -60,8 +60,8 @@ class LoginControllerTest extends TestCase
     /** @test */
     public function a_signed_in_user_may_logout()
     {
-
-        $user = $this->staff();
+      $this->withoutExceptionHandling();
+        $user = $this->nurse();
 
         $this->actingAs($user)->get('/app/logout')
               ->assertStatus(302)

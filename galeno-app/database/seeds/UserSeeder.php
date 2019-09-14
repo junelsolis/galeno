@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
         $roleNames = ['physician', 'nurse', 'staff', 'admin'];
 
         foreach ($users as $user) {
-            $user->assignRole($roleNames[array_rand($roleNames)]);
+            $user->assignRoles($roleNames[array_rand($roleNames)]);
         }
 
         // create my own user
@@ -26,6 +26,6 @@ class UserSeeder extends Seeder
           'password' => Hash::make('password888'),
         ]);
 
-        $user->assignRole('physician');
+        $user->assignRoles('nurse');
     }
 }
