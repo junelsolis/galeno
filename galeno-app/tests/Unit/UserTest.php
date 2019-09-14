@@ -13,7 +13,7 @@ class UserTest extends TestCase
     /** @test */
     public function a_user_has_roles()
     {
-        $user = CreateUser::withRoles('nurse');
+        $user = $this->nurse();
 
         $this->assertTrue($user->hasRole('nurse'));
     }
@@ -21,13 +21,11 @@ class UserTest extends TestCase
     /** @test */
     public function a_user_can_be_assigned_a_role()
     {
-        $user = CreateUser::create();
-
-        $user->assignRole('staff');
+        $user = $this->user()->assignRoles('staff');
 
         $this->assertTrue($user->roles->count() == 1);
 
-        $user->assignRole('nurse');
+        $user->assignRoles('nurse');
 
         $user->refresh();
 
@@ -37,16 +35,27 @@ class UserTest extends TestCase
     /** @test */
     public function a_user_can_have_multiple_roles()
     {
-        $this->withoutExceptionHandling();
-        $user = CreateUser::withRoles(['admin', 'nurse']);
+        $user = $this->user()->assignRoles(['admin', 'nurse']);
 
         $this->assertTrue($user->roles->count() == 2);
     }
 
+
+    /** @test */
+    public function a_user_can_set_a_password()
+    {
+        $user = $this->staff();
+
+        $user->setPassword('someGreatPassword');
+
+        $this->assertTrue(\Hash::check('someGreatPassword', $user->password));
+    }
+
+
     /** @test */
     public function a_user_can_have_assigned_patients()
     {
-        $user = CreateUser::withRoles('physician');
+        $user = $this->physician();
 
         $patients = factory('App\Patient', 3)->create();
 

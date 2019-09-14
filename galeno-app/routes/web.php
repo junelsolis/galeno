@@ -31,4 +31,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('app/nurse', function () {
         return view('nurse.main');
     });
+
+    Route::get('app/staff', function() {
+        return view('staff.main');
+    });
 });

@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Hash;
 
 class User extends Authenticatable
 {
@@ -46,13 +47,21 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Role');
     }
 
-    public function assignRole($name)
+    public function assignRoles($roles)
     {
-        $role = Role::where('name', $name)->first();
 
-        $this->roles()->syncWithoutDetaching($role->id);
+        if (is_array($roles)) {
+          foreach($roles as $i) {
+            $role = Role::where('name', $i)->first();
+            $this->roles()->attach($role->id);
+          }
+        } else {
+          $role = Role::where('name', $roles)->first();
+          $this->roles()->attach($role->id);
+        }
 
         return $this;
+
     }
 
     public function hasRole($name)
@@ -68,13 +77,16 @@ class User extends Authenticatable
         }
     }
 
+    public function setPassword(string $string)
+    {
+      $this->password = Hash::make($string);
+      $this->save();
+      return $this;
+    }
+
     public function patients()
     {
         return $this->belongsToMany('App\Patient');
     }
 
-    // public function sendPasswordResetNotification($token)
-    // {
-    //     $this->notify(new ResetPasswordNotification($token));
-    // }
 }
