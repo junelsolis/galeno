@@ -4,7 +4,6 @@ namespace Tests\Unit;
 
 use App\Patient;
 use App\User;
-use Facades\Tests\Arrangements\CreateUser;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
