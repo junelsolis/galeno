@@ -2,9 +2,11 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Galeno</title>
   </head>
   <body>
-    nurse main
+    <div>
+      this is the nurse main
+    </div>
   </body>
 </html>

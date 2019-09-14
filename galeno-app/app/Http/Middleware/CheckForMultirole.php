@@ -21,7 +21,7 @@ class CheckForMultirole
         $user = auth()->user();
 
         if ($user->roles->count() > 1) {
-            return redirect('app/switcher');
+            return redirect('/app/switcher');
         } 
 
         return $next($request);

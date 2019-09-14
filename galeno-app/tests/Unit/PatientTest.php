@@ -25,7 +25,7 @@ class PatientTest extends TestCase
     /** @test */
     public function a_patient_can_be_assigned_to_a_user()
     {
-        $user = CreateUser::withRoles('physician');
+        $user = $this->physician();
 
         $patient = factory('App\Patient')->create();
         $patient->assign($user);

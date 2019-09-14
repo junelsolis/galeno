@@ -12,13 +12,6 @@ class LoginControllerTest extends TestCase
     /** @test */
     public function a_user_who_is_not_logged_in_is_taken_to_the_home_page()
     {
-        $this->withoutExceptionHandling();
-
-        $this->get('/')
-              ->assertStatus(200)
-              ->assertViewIs('main')
-              ->assertSee('Galeno');
-
         $this->get('/app/nurse')->assertRedirect('/');
         $this->get('/app/staff')->assertRedirect('/');
     }

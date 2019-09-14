@@ -14,7 +14,9 @@ class LoginController extends Controller
 
     public function main()
     {
-        return view('main');
+        return redirect('/app/' . auth()->user()->roles()->first()->name);
+
+        // return view('main');
     }
 
     public function login(Request $request)
