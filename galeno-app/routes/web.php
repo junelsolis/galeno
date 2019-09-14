@@ -35,5 +35,4 @@ Route::middleware(['auth', 'multirole'])->group(function () {
     });
 
     Route::get('app/logout', 'LoginController@logout');
-
 });
