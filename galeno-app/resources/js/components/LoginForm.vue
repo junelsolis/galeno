@@ -39,7 +39,7 @@
       }
 
       a:hover {
-        @apply text-blue-100;
+        @apply text-accent;
         transition-duration: 0.3s;
       }
     }

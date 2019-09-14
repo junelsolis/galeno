@@ -1,5 +1,5 @@
 .standard-button {
-  @apply px-6 py-2 text-xs text-white bg-blue-100 shadow rounded;
+  @apply px-5 py-2 text-xs text-white bg-blue-100 shadow;
   transition-duration: 0.35s;
 
 }
@@ -22,7 +22,7 @@
   }
 
   input {
-    @apply px-3 py-2 rounded text-sm text-grey-400 w-full;
+    @apply px-3 py-2 rounded text-sm text-dark w-full;
     overflow: visible !important;
     transition-duration: 0.35s;
   }
@@ -35,7 +35,7 @@
   }
 
   input::placeholder {
-    @apply text-xs text-grey-300;
+    @apply text-xs text-accent;
   }
 
 }
