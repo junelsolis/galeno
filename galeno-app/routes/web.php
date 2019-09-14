@@ -21,7 +21,7 @@ Route::get('check-email-password-reset', 'LoginController@showCheckEmailReset');
 // Route::get('app')->middleware(['auth', 'multirole']);
 
 Route::middleware(['auth', 'multirole'])->group(function () {
-    Route::get('app', 'LoginController@main');
+    Route::get('app', 'LoginController@switcher');
 
     Route::get('app/switcher', function () {
         return view('switcher');

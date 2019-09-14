@@ -9,6 +9,14 @@ class LoginControllerTest extends TestCase
 {
     use RefreshDatabase;
 
+
+    /** @test */
+    public function it_shows_the_login_page()
+    {
+        $this->get('/')->assertViewIs('main');
+
+    }
+
     /** @test */
     public function a_user_who_is_not_logged_in_is_taken_to_the_home_page()
     {
