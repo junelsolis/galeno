@@ -2,9 +2,9 @@
 
 namespace App;
 
+use Hash;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Hash;
 
 class User extends Authenticatable
 {
@@ -49,19 +49,17 @@ class User extends Authenticatable
 
     public function assignRoles($roles)
     {
-
         if (is_array($roles)) {
-          foreach($roles as $i) {
-            $role = Role::where('name', $i)->first();
-            $this->roles()->attach($role->id);
-          }
+            foreach ($roles as $i) {
+                $role = Role::where('name', $i)->first();
+                $this->roles()->attach($role->id);
+            }
         } else {
-          $role = Role::where('name', $roles)->first();
-          $this->roles()->attach($role->id);
+            $role = Role::where('name', $roles)->first();
+            $this->roles()->attach($role->id);
         }
 
         return $this;
-
     }
 
     public function hasRole($name)
@@ -79,14 +77,14 @@ class User extends Authenticatable
 
     public function setPassword(string $string)
     {
-      $this->password = Hash::make($string);
-      $this->save();
-      return $this;
+        $this->password = Hash::make($string);
+        $this->save();
+
+        return $this;
     }
 
     public function patients()
     {
         return $this->belongsToMany('App\Patient');
     }
-
 }

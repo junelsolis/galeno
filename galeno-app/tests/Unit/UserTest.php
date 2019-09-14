@@ -2,7 +2,6 @@
 
 namespace Tests\Unit;
 
-use Facades\Tests\Arrangements\CreateUser;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -40,7 +39,6 @@ class UserTest extends TestCase
         $this->assertTrue($user->roles->count() == 2);
     }
 
-
     /** @test */
     public function a_user_can_set_a_password()
     {
@@ -50,7 +48,6 @@ class UserTest extends TestCase
 
         $this->assertTrue(\Hash::check('someGreatPassword', $user->password));
     }
-
 
     /** @test */
     public function a_user_can_have_assigned_patients()

@@ -32,7 +32,7 @@ Route::middleware(['auth'])->group(function () {
         return view('nurse.main');
     });
 
-    Route::get('app/staff', function() {
+    Route::get('app/staff', function () {
         return view('staff.main');
     });
 });
