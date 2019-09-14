@@ -2,7 +2,6 @@
 
 namespace Tests\Feature;
 
-use Facades\Tests\Arrangements\CreateUser;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -54,7 +53,6 @@ class LoginControllerTest extends TestCase
         $this->json('POST', 'login', $att)
               ->assertStatus(200)
               ->assertJson(['status' => 'Error', 'message' => 'Sorry, invalid credentials.']);
-
     }
 
     /** @test */
@@ -77,6 +75,4 @@ class LoginControllerTest extends TestCase
             ->assertViewIs('reset-password')
             ->assertSee('Reset Password');
     }
-
-
 }
