@@ -9,12 +9,10 @@ class LoginControllerTest extends TestCase
 {
     use RefreshDatabase;
 
-
     /** @test */
     public function it_shows_the_login_page()
     {
         $this->get('/')->assertViewIs('main');
-
     }
 
     /** @test */
