@@ -27,12 +27,12 @@ class Patient extends Model
     public function age()
     {
         // return $this->dob->diff(now())->format('%y Y');
-        return now()->diffInYears($this->dob) . ' Y';
+        return now()->diffInYears($this->dob).' Y';
     }
 
     public function profileImagePath()
     {
-        return 'https://www.gravatar.com/avatar/' .md5($this->email). '?d=mp';
+        return 'https://www.gravatar.com/avatar/'.md5($this->email).'?d=mp';
     }
 
     public function getAgeAttribute()
