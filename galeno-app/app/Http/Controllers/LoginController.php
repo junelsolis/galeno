@@ -17,9 +17,9 @@ class LoginController extends Controller
         return view('main');
     }
 
-    public function switcher()
+    public function app()
     {
-        return redirect('/app/'.auth()->user()->roles()->first()->name);
+        return redirect('/app');
     }
 
     public function login(Request $request)

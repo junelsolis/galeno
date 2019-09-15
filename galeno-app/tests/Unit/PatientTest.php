@@ -28,8 +28,8 @@ class PatientTest extends TestCase
 
         $patient = factory('App\Patient')->create();
         $patient->assign($user);
+        $patient->refresh();
 
-        // dd($patient->users->has('name', '=', $user->name));
-        $this->assertTrue($patient->users->contains($user));
+        $this->assertTrue($patient->physicians()->first()->name == $user->name);
     }
 }

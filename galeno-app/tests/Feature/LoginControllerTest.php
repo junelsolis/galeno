@@ -16,10 +16,10 @@ class LoginControllerTest extends TestCase
     }
 
     /** @test */
-    public function a_user_who_is_not_logged_in_is_taken_to_the_home_page()
+    public function a_user_who_is_not_logged_in_is_taken_to_their_dashboard()
     {
-        $this->get('/app/nurse')->assertRedirect('/');
-        $this->get('/app/staff')->assertRedirect('/');
+        $this->get('/app')->assertRedirect('/');
+        $this->get('/app')->assertRedirect('/');
     }
 
     /** @test */

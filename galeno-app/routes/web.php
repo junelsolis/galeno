@@ -21,18 +21,18 @@ Route::get('check-email-password-reset', 'LoginController@showCheckEmailReset');
 // Route::get('app')->middleware(['auth', 'multirole']);
 
 Route::middleware(['auth', 'multirole'])->group(function () {
-    Route::get('app', 'LoginController@switcher');
+    Route::get('app', 'LoginController@app');
 
-    Route::get('app/switcher', function () {
-        return view('switcher');
-    });
-    Route::get('app/nurse', function () {
-        return view('nurse.main');
+    // Route::get('app/switcher', function () {
+    //     return view('switcher');
+    // });
+    Route::get('app', function () {
+        return view('user.main');
     });
 
-    Route::get('app/staff', function () {
-        return view('staff.main');
-    });
+    // Route::get('app/staff', function () {
+    //     return view('staff.main');
+    // });
 
     Route::get('app/logout', 'LoginController@logout');
 });
