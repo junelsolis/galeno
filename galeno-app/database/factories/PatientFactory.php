@@ -13,7 +13,7 @@ $factory->define(Patient::class, function (Faker $faker) {
         'dob'               => now()->subYears(rand(18, 70)),
         'occupation'        => $faker->word,
         'phone'             => $faker->phoneNumber,
-        'email'             => $faker->safeEmail,
+        'email'             => $faker->email,
         'address'           => $faker->streetAddress,
         'city'              => $faker->city,
         'guardian_name'     => $faker->name,

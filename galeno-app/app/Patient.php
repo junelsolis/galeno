@@ -14,14 +14,14 @@ class Patient extends Model
 
     protected $appends = ['age'];
 
-    public function users()
+    public function physicians()
     {
         return $this->belongsToMany('App\User');
     }
 
     public function assign(User $user)
     {
-        $this->users()->attach($user->id);
+        $this->physicians()->attach($user->id);
     }
 
     public function getAgeAttribute()
