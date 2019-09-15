@@ -10,7 +10,6 @@ class LoginController extends Controller
 {
     use ResetsPasswords;
 
-
     public function main()
     {
         return view('main');
