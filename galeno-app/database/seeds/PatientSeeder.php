@@ -11,14 +11,14 @@ class PatientSeeder extends Seeder
      */
     public function run()
     {
-        $physicians = \App\User::whereHas('roles', function($q) {
-          $q->whereIn('name', ['physician']);
+        $physicians = \App\User::whereHas('roles', function ($q) {
+            $q->whereIn('name', ['physician']);
         })->get();
 
         $patients = factory('App\Patient', 50)->create();
 
         foreach ($patients as $patient) {
-          $patient->assign($physicians->random());
+            $patient->assign($physicians->random());
         }
     }
 }
