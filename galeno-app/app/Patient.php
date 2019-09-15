@@ -31,7 +31,7 @@ class Patient extends Model
 
     public function profileImagePath()
     {
-        return 'https://www.gravatar.com/avatar/' . md5($this->email) . '?d=mp';
+        return 'https://www.gravatar.com/avatar/'.md5($this->email).'?d=mp';
     }
 
     public function getAgeAttribute()
@@ -41,6 +41,6 @@ class Patient extends Model
 
     public function getProfileImagePathAttribute()
     {
-      return $this->profileImagepath();
+        return $this->profileImagepath();
     }
 }
