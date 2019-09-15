@@ -3,7 +3,7 @@
 
     <div class='input-group'>
       <input type='text' v-model='email' placeholder='Email address' />
-      <input type='password' v-model='password' placeholder='Password' />
+      <input type='password' v-model='password' placeholder='Password' @keyup.enter='submit' />
     </div>
 
     <div class='mt-4 text-center'>
