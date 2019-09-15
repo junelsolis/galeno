@@ -32,4 +32,22 @@ class PatientTest extends TestCase
 
         $this->assertTrue($patient->physicians()->first()->name == $user->name);
     }
+
+    /** @test */
+    public function it_has_an_age_in_years()
+    {
+      $patient = factory('App\Patient')->create(['dob' => now()->subYears(15)]);
+
+      $this->assertTrue($patient->age() == '15 Y');
+    }
+
+    /** @test */
+    public function it_has_a_profile_image_path_attribute()
+    {
+
+      $patient = factory('App\Patient')->create();
+
+      $this->assertTrue(str_contains($patient['profile_image_path']), 'gravatar.com');
+
+    }
 }
