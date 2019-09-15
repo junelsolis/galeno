@@ -10,16 +10,10 @@ class LoginController extends Controller
 {
     use ResetsPasswords;
 
-    // protected $redirectTo = ['/app'];
 
     public function main()
     {
         return view('main');
-    }
-
-    public function app()
-    {
-        return redirect('/app');
     }
 
     public function login(Request $request)
