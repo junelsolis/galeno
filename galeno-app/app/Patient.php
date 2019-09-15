@@ -12,7 +12,7 @@ class Patient extends Model
       'nhif_number', 'nhif_owner', 'profile_image_url',
     ];
 
-    protected $appends = ['age'];
+    protected $appends = ['age', 'profile_image_path'];
 
     public function physicians()
     {
@@ -24,8 +24,23 @@ class Patient extends Model
         $this->physicians()->attach($user->id);
     }
 
+    public function age()
+    {
+        return \Carbon\Carbon::create($this->dob)->diff(now())->format('%y Y');
+    }
+
+    public function profileImagePath()
+    {
+        return 'https://www.gravatar.com/avatar/' . md5($this->email) . '?d=mp';
+    }
+
     public function getAgeAttribute()
     {
-        return $this->dob->age;
+        return $this->age();
+    }
+
+    public function getProfileImagePathAttribute()
+    {
+      return $this->profileImagepath();
     }
 }
