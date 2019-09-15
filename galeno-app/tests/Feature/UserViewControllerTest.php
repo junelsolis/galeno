@@ -23,6 +23,7 @@ class UserViewControllerTest extends TestCase
     /** @test */
     public function a_nurse_and_staff_should_see_all_visits_in_the_dashboard()
     {
+        $this->withoutExceptionHandling();
         $nurse = $this->nurse();
         $staff = $this->staff();
 

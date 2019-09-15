@@ -9,15 +9,6 @@ class PatientTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
-    public function a_patient_has_an_age()
-    {
-        $patient = factory('App\Patient')->create([
-        'dob' => now()->subYears(35),
-      ]);
-
-        $this->assertTrue($patient['age'] == 35);
-    }
 
     /** @test */
     public function a_patient_can_be_assigned_to_a_user()
@@ -34,6 +25,7 @@ class PatientTest extends TestCase
     /** @test */
     public function it_has_an_age_in_years()
     {
+        $this->withoutExceptionHandling();
         $patient = factory('App\Patient')->create(['dob' => now()->subYears(15)]);
 
         $this->assertTrue($patient->age() == '15 Y');
@@ -44,6 +36,6 @@ class PatientTest extends TestCase
     {
         $patient = factory('App\Patient')->create();
 
-        $this->assertTrue(str_contains($patient['profile_image_path']), 'gravatar.com');
+        $this->assertTrue(str_contains($patient['profile_image_path'], 'gravatar.com'));
     }
 }
