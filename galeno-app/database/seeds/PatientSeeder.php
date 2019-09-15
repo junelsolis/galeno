@@ -17,8 +17,8 @@ class PatientSeeder extends Seeder
 
         $nurses = factory('App\User', 3)->create();
 
-        foreach($nurses as $nurse) {
-          $nurse->assignRoles('nurse');
+        foreach ($nurses as $nurse) {
+            $nurse->assignRoles('nurse');
         }
 
         $patients = factory('App\Patient', 50)->create();
@@ -27,9 +27,9 @@ class PatientSeeder extends Seeder
             $patient->assign($physicians->random());
 
             factory('App\Visit')->create([
-              'patient_id' => $patient->id,
-              'creator_id' => $nurses->random()->id,
-              'attending_id' => $physicians->random()->id
+              'patient_id'   => $patient->id,
+              'creator_id'   => $nurses->random()->id,
+              'attending_id' => $physicians->random()->id,
             ]);
         }
     }
