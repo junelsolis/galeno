@@ -15,10 +15,22 @@ class PatientSeeder extends Seeder
             $q->whereIn('name', ['physician']);
         })->get();
 
+        $nurses = factory('App\User', 3)->create();
+
+        foreach($nurses as $nurse) {
+          $nurse->assignRoles('nurse');
+        }
+
         $patients = factory('App\Patient', 50)->create();
 
         foreach ($patients as $patient) {
             $patient->assign($physicians->random());
+
+            factory('App\Visit')->create([
+              'patient_id' => $patient->id,
+              'creator_id' => $nurses->random()->id,
+              'attending_id' => $physicians->random()->id
+            ]);
         }
     }
 }

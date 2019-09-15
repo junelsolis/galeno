@@ -17,7 +17,7 @@ class CreatePatientsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->enum('gender', ['M', 'F']);
-            $table->datetime('dob');
+            $table->date('dob');
             $table->string('occupation', 60);
             $table->string('phone', 50);
             $table->string('email')->nullable();
