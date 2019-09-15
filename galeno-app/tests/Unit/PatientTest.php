@@ -2,8 +2,6 @@
 
 namespace Tests\Unit;
 
-use App\Patient;
-use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
