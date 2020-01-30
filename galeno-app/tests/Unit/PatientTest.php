@@ -9,7 +9,6 @@ class PatientTest extends TestCase
 {
     use RefreshDatabase;
 
-
     /** @test */
     public function a_patient_can_be_assigned_to_a_user()
     {
