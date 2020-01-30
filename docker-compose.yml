@@ -11,7 +11,7 @@ services:
       - "./galeno-app:/var/www/html"
       - "./nginx:/etc/nginx/"
     ports:
-      - "9300:80"
+      - "9322:80"
 
 
   php:
@@ -37,14 +37,14 @@ services:
     ports:
       - "127.0.0.1:3322:3306"
 
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    container_name: galeno-pma
-    restart: always
-    environment:
-      - PMA_HOST=galeno-db
-    ports:
-      - "127.0.0.1:9301:80"
+  # phpmyadmin:
+  #   image: phpmyadmin/phpmyadmin
+  #   container_name: galeno-pma
+  #   restart: always
+  #   environment:
+  #     - PMA_HOST=galeno-db
+  #   ports:
+  #     - "127.0.0.1:9301:80"
 
 
 secrets:
