@@ -21,9 +21,9 @@ class UserSeeder extends Seeder
 
         // create my own user
         $user = factory('App\User')->create([
-          'name'     => 'Junel Solis',
-          'email'    => 'junel.solis@gmail.com',
-          'password' => Hash::make('password888'),
+            'name'     => 'Junel Solis',
+            'email'    => 'junel.solis@gmail.com',
+            'password' => Hash::make('password888'),
         ]);
 
         $user->assignRoles('nurse');

@@ -19,9 +19,9 @@ class LoginController extends Controller
     {
         Auth::attempt(
           [
-            'email'    => $request->input('email'),
-            'password' => $request->input('password'),
-            'active'   => 1,
+              'email'    => $request->input('email'),
+              'password' => $request->input('password'),
+              'active'   => 1,
           ], true
         );
 

@@ -27,9 +27,9 @@ class PatientSeeder extends Seeder
             $patient->assign($physicians->random());
 
             factory('App\Visit')->create([
-              'patient_id'   => $patient->id,
-              'creator_id'   => $nurses->random()->id,
-              'attending_id' => $physicians->random()->id,
+                'patient_id'   => $patient->id,
+                'creator_id'   => $nurses->random()->id,
+                'attending_id' => $physicians->random()->id,
             ]);
         }
     }
