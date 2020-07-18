@@ -18,11 +18,12 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         Auth::attempt(
-          [
-              'email'    => $request->input('email'),
-              'password' => $request->input('password'),
-              'active'   => 1,
-          ], true
+            [
+                'email'    => $request->input('email'),
+                'password' => $request->input('password'),
+                'active'   => 1,
+            ],
+            true
         );
 
         if (Auth::check()) {
